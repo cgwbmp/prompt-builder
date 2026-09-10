@@ -36,7 +36,7 @@ export function OutputPanel({ output, custom, onCustomChange, selectedCount, onC
   const empty = output.length === 0
 
   return (
-    <aside className="glass-dark flex flex-col gap-4 rounded-2xl border-t-2 border-t-neon-cyan/70 p-4 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)]">
+    <aside className="glass-dark flex flex-col gap-4 rounded-2xl !border-t-2 !border-t-neon-cyan/70 p-4 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)]">
       <header className="flex items-center justify-between">
         <h2 className="font-heading text-base font-semibold text-neon-cyan text-glow">Your prompt</h2>
         <div className="flex items-center gap-2 text-xs text-ink-muted">

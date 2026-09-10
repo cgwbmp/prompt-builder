@@ -1,21 +1,28 @@
 import { useCallback, useMemo, useState } from 'react'
-import { CATEGORIES, PROMPTS } from './data'
+import { CATEGORIES, PROMPTS, PROMPT_BY_ID } from './data'
 import { buildOutput } from './lib/join'
-import { ALL, filterPrompts, type CategoryFilter } from './lib/filter'
+import { ALL, FAVORITES, filterPrompts, type CategoryFilter } from './lib/filter'
+import { usePersistedSet } from './lib/usePersistedSet'
 import { Logo } from './components/Logo'
 import { SearchInput } from './components/SearchInput'
 import { CategoryBar } from './components/CategoryBar'
 import { PromptGrid } from './components/PromptGrid'
 import { OutputPanel } from './components/OutputPanel'
 
+const isKnownPrompt = (id: string) => PROMPT_BY_ID.has(id)
+
 export default function App() {
-  const [selected, setSelected] = useState<ReadonlySet<string>>(() => new Set())
+  const { set: selected, toggle, clear } = usePersistedSet('prompt-builder:selected', isKnownPrompt)
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>(ALL)
   const [query, setQuery] = useState('')
   const [custom, setCustom] = useState('')
   const [flare, setFlare] = useState(false)
+  const { set: favorites, toggle: toggleFavorite } = usePersistedSet('prompt-builder:favorites', isKnownPrompt)
 
-  const visible = useMemo(() => filterPrompts(PROMPTS, activeCategory, query), [activeCategory, query])
+  const visible = useMemo(
+    () => filterPrompts(PROMPTS, activeCategory, query, favorites),
+    [activeCategory, query, favorites],
+  )
   const output = useMemo(() => buildOutput(PROMPTS, CATEGORIES, selected, custom), [selected, custom])
 
   const selectedCounts = useMemo(() => {
@@ -25,17 +32,6 @@ export default function App() {
     }
     return counts
   }, [selected])
-
-  const toggle = useCallback((id: string) => {
-    setSelected((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
-      return next
-    })
-  }, [])
-
-  const clear = useCallback(() => setSelected(new Set()), [])
 
   const onCopied = useCallback(() => {
     setFlare(true)
@@ -68,8 +64,20 @@ export default function App() {
               onChange={setActiveCategory}
               selectedCounts={selectedCounts}
               totalSelected={selected.size}
+              favoriteCount={favorites.size}
             />
-            <PromptGrid prompts={visible} selected={selected} onToggle={toggle} />
+            <PromptGrid
+              prompts={visible}
+              selected={selected}
+              favorites={favorites}
+              onToggle={toggle}
+              onToggleFavorite={toggleFavorite}
+              emptyMessage={
+                activeCategory === FAVORITES && favorites.size === 0
+                  ? 'No favorites yet. Hover a card and click the star to save it.'
+                  : undefined
+              }
+            />
           </main>
 
           <OutputPanel
