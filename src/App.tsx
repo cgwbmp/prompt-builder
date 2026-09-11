@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
 import { CATEGORIES, PROMPTS, PROMPT_BY_ID } from './data'
 import { buildOutput } from './lib/join'
-import { ALL, FAVORITES, filterPrompts, type CategoryFilter } from './lib/filter'
+import { FAVORITES, filterPrompts, type CategoryFilter } from './lib/filter'
 import { usePersistedSet } from './lib/usePersistedSet'
 import { Logo } from './components/Logo'
 import { SearchInput } from './components/SearchInput'
@@ -13,7 +13,7 @@ const isKnownPrompt = (id: string) => PROMPT_BY_ID.has(id)
 
 export default function App() {
   const { set: selected, toggle, clear } = usePersistedSet('prompt-builder:selected', isKnownPrompt)
-  const [activeCategory, setActiveCategory] = useState<CategoryFilter>(ALL)
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>(FAVORITES)
   const [query, setQuery] = useState('')
   const [custom, setCustom] = useState('')
   const [flare, setFlare] = useState(false)

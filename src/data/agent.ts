@@ -65,6 +65,69 @@ export const agent: Prompt[] = [
     category: 'agent',
   },
   {
+    id: 'agent.questions-up-front',
+    title: 'All questions up front',
+    prompt:
+      'Before starting, gather every clarifying question into a single numbered list and ask them together. Do not start work and then interrupt with questions one at a time.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.questions-with-defaults',
+    title: 'Questions with a proposed default',
+    prompt:
+      'For each clarifying question, state the answer you would assume if I do not reply, so I can confirm with a single "yes" or correct only the ones that are wrong.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.only-blocking-questions',
+    title: 'Ask only what changes the work',
+    prompt:
+      'Ask a question only when different answers would lead to materially different code. Decide everything else yourself and list those decisions in one line each.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.multiple-choice-questions',
+    title: 'Multiple choice, not open-ended',
+    prompt:
+      'Phrase clarifying questions as two to four concrete options with one trade-off each, not as open-ended "what do you want?" questions.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.look-up-before-asking',
+    title: 'Look it up before asking',
+    prompt:
+      'Never ask about something you can find in the code, config, docs, or git history. Reserve questions for intent, priorities, and preferences that only I know.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.surface-hidden-requirements',
+    title: 'Surface hidden requirements',
+    prompt:
+      'Before starting, ask about the constraints the request does not mention but that usually matter: target environment, backwards compatibility, performance limits, error handling expectations, and who the users are.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.confirm-success-criteria',
+    title: 'Confirm what done means',
+    prompt:
+      'If the request does not say how the result will be judged, ask for the acceptance criteria before starting: what must work, what must not change, and how it will be checked.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.confirm-scope-before-large',
+    title: 'Confirm scope before large changes',
+    prompt:
+      'When the task would touch more than a handful of files, a public interface, or a data schema, list the files and interfaces you intend to change and wait for confirmation before editing.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.explain-why-asking',
+    title: 'Say why you are asking',
+    prompt:
+      'With each clarifying question, add one line on what changes depending on the answer, so I can judge whether the question matters or can be skipped.',
+    category: 'agent',
+  },
+  {
     id: 'agent.no-unrelated-files',
     title: 'Never touch unrelated files',
     prompt:
@@ -237,6 +300,167 @@ export const agent: Prompt[] = [
     title: 'No unexpected network calls',
     prompt:
       'Do not make network requests, call external APIs, or download resources beyond installing declared project dependencies, unless the task explicitly requires it.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.parallel-tool-calls',
+    title: 'Parallel independent tool calls',
+    prompt:
+      'When several reads, searches, or commands do not depend on each other, issue them together in one step instead of one at a time. Serialize only when a later call needs an earlier result.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.retry-transient-errors',
+    title: 'Retry transient errors',
+    prompt:
+      'If a command fails for a transient reason (network timeout, lock file, flaky test), retry once or twice before reporting it. Report persistent failures with the exact output.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.finish-before-returning',
+    title: 'Finish before returning',
+    prompt:
+      'Complete the whole task before handing back. Do not stop with a plan, a partial implementation, or a list of next steps you could have done yourself. Return early only when blocked on input only I can give.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-permission-for-reversible',
+    title: 'No permission for reversible steps',
+    prompt:
+      'Do not ask before reading files, running tests, or making edits that follow from the task and can be undone. Ask only before destructive, irreversible, or outward-facing actions.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.subagents-for-search',
+    title: 'Delegate broad searches',
+    prompt:
+      'For searches that span many files or directories, delegate to a subagent and keep only its conclusion. Search directly yourself only when you already know the file or symbol.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.lean-context',
+    title: 'Keep context lean',
+    prompt:
+      'Read only the sections of files you need and avoid dumping large outputs into the conversation. Prefer targeted searches and line ranges over whole-file reads of big files.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.tool-failures-verbatim',
+    title: 'Report tool failures verbatim',
+    prompt:
+      'When a command, build, or test fails, quote the exact error output rather than paraphrasing it, and say which command produced it.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.stay-inside-repo',
+    title: 'Stay inside the repo',
+    prompt:
+      'Read and write only within the project directory. Do not create, modify, or delete files anywhere else on the system, including home directory dotfiles and temp locations outside the project.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-system-changes',
+    title: 'No global installs or system changes',
+    prompt:
+      'Do not run sudo, install packages globally, modify PATH, shell rc files, or system settings. Everything you need must be installed and run at project scope.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-lingering-processes',
+    title: 'No lingering processes',
+    prompt:
+      'Stop every server, watcher, or background process you started before finishing. Do not leave anything running that I did not ask for.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-self-config-edits',
+    title: 'Do not edit your own config',
+    prompt:
+      'Do not modify agent configuration files such as CLAUDE.md, the .claude directory, permission settings, or hooks unless I explicitly ask you to.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-manual-lockfile-edits',
+    title: 'Do not edit lockfiles by hand',
+    prompt:
+      'Never edit package-lock.json, yarn.lock, pnpm-lock.yaml, poetry.lock, or similar files directly. Change them only through the package manager.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-vendor-edits',
+    title: 'Do not touch vendored code',
+    prompt:
+      'Never edit files in node_modules, vendor, or other third-party directories. If a dependency needs a change, propose a patch, wrapper, or version bump instead.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.preserve-others-changes',
+    title: 'Preserve uncommitted work',
+    prompt:
+      'Do not revert, stash, or overwrite uncommitted changes you did not make. If they conflict with your task, stop and ask how to proceed.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-rename-move',
+    title: 'Do not rename or move files',
+    prompt:
+      'Keep files where they are and named as they are unless the task explicitly requires renaming or moving them. Propose restructuring separately.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-bypassing-checks',
+    title: 'Do not bypass checks',
+    prompt:
+      'Never use --no-verify, eslint-disable, @ts-ignore, @ts-expect-error, test.skip, or similar escapes to get past a failing check. Fix the underlying problem or report it.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-release-changes',
+    title: 'No version bumps or releases',
+    prompt:
+      'Do not change version numbers, edit changelogs, create tags, or publish packages unless explicitly asked. Releasing is a separate, human decision.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-production-access',
+    title: 'No production access',
+    prompt:
+      'Do not deploy, run migrations against non-local databases, or use production credentials. Work only against local or explicitly designated development environments.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-infra-edits',
+    title: 'Do not modify CI or infrastructure',
+    prompt:
+      'Leave CI pipelines, Dockerfiles, Terraform, Kubernetes manifests, and deployment config unchanged unless the task is specifically about them.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-data-exfiltration',
+    title: 'Do not send code or data outside',
+    prompt:
+      'Never paste project code, data, logs, or credentials into third-party services, paste sites, or external AI tools. Everything stays local unless I say otherwise.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-communicating-for-me',
+    title: 'Do not communicate on my behalf',
+    prompt:
+      'Do not post PR comments, open issues, send messages, or write emails in my name. Draft the text and let me send it.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.no-stack-changes',
+    title: 'Do not change the stack',
+    prompt:
+      'Do not switch languages, frameworks, build tools, or major versions of anything. Work within the stack that is already in place, and propose changes to it separately.',
+    category: 'agent',
+  },
+  {
+    id: 'agent.stay-in-package',
+    title: 'Stay within the assigned package',
+    prompt:
+      'In a monorepo, confine changes to the package or directory the task names. If a fix requires touching a shared package or another workspace, stop and ask first.',
     category: 'agent',
   },
 ]

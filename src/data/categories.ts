@@ -36,6 +36,12 @@ export const CATEGORIES: Category[] = [
     description: 'Process before and during a change: plan first, incremental steps, verify, commit granularity. Not agent behavior rules.',
   },
   {
+    id: 'effort',
+    label: 'Effort & Depth',
+    group: 'dev',
+    description: 'How much work to spend: exploration breadth, verification depth, thinking budget, when to stop. Not output length (see Tone).',
+  },
+  {
     id: 'codestyle',
     label: 'Code Style & Quality',
     group: 'dev',
