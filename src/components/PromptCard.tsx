@@ -22,7 +22,7 @@ export function PromptCard({ prompt, selected, favorite, onToggle, onToggleFavor
         type="button"
         aria-pressed={selected}
         onClick={() => onToggle(prompt.id)}
-        className="flex h-full w-full flex-col gap-2 rounded-xl p-4 pr-12 text-left outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan/60"
+        className="flex h-full w-full flex-col gap-2 rounded-xl p-4 pr-8 text-left outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan/60"
       >
         <div className="flex items-start justify-between gap-3">
           <h3 className="font-heading text-sm font-semibold leading-snug text-ink">{prompt.title}</h3>

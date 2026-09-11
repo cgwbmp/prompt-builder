@@ -25,7 +25,7 @@ export function SearchInput({ value, onChange }: SearchInputProps) {
         aria-label="Search prompts"
         className="glass w-full rounded-xl py-2.5 pl-3 pr-3 text-sm text-ink placeholder:text-ink-muted outline-none transition focus:border-neon-cyan/60 focus:ring-2 focus:ring-neon-cyan/40"
       />
-      {value && (
+      {/* {value && (
         <button
           type="button"
           onClick={() => onChange('')}
@@ -34,7 +34,7 @@ export function SearchInput({ value, onChange }: SearchInputProps) {
         >
           ×
         </button>
-      )}
+      )} */}
     </div>
   )
 }

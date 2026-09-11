@@ -10,6 +10,7 @@
  * 4. Import and spread it into `PROMPTS` in `index.ts`.
  *
  * Writing guidance:
+ *   - Scope: software development prompts for any AI coding assistant.
  *   - `title`: 2 to 5 words, human-friendly, what a user would scan for.
  *   - `prompt`: self-contained instruction that reads well when concatenated
  *     with other prompts under a `## Category` header. Imperative mood.

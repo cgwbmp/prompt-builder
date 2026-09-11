@@ -1,6 +1,8 @@
 # Prompt Builder
 
-Compose AI-ready prompts from prebuilt building blocks. Filter by category, search, multi-select, and copy the joined result.
+Compose AI-ready prompts for coding assistants (Claude, Cursor, Copilot, Codex, and others) from prebuilt building blocks. Filter by category, search, multi-select, star favorites, and copy the joined result. Selection and favorites persist in the browser.
+
+The catalog has three groups. Development: agent working rules, code style, languages, testing, review, security, architecture, git, DevOps, docs, AI integration. Visual design, for interfaces, slides, graphics, or brand: visual style, mood, color, typography, layout, motion. General: writing, summarizing, analysis, brainstorming, business, marketing, teaching, translation, image generation. Cross-cutting: how the assistant should reason, talk, and format output.
 
 Stack: React 19, TypeScript, Vite 8, Tailwind CSS 4. Deployed to GitHub Pages from `main`.
 

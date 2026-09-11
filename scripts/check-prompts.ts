@@ -6,6 +6,7 @@ import { CATEGORIES, CATEGORY_BY_ID, PROMPTS } from '../src/data/index.ts'
 
 const errors: string[] = []
 const seen = new Set<string>()
+const seenText = new Map<string, string>()
 
 for (const p of PROMPTS) {
   const where = `prompt "${p.id}"`
@@ -13,6 +14,13 @@ for (const p of PROMPTS) {
   if (!p.id || typeof p.id !== 'string') errors.push(`${where}: missing id`)
   if (seen.has(p.id)) errors.push(`${where}: duplicate id`)
   seen.add(p.id)
+
+  const text = p.prompt?.trim().toLowerCase()
+  if (text) {
+    const prior = seenText.get(text)
+    if (prior) errors.push(`${where}: duplicate prompt text (same as "${prior}")`)
+    else seenText.set(text, p.id)
+  }
 
   if (!p.title?.trim()) errors.push(`${where}: empty title`)
   if (!p.prompt?.trim()) errors.push(`${where}: empty prompt`)
