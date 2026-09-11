@@ -2,6 +2,7 @@ import type { Prompt } from '../types'
 import { role } from './role'
 import { agent } from './agent'
 import { workflow } from './workflow'
+import { method } from './method'
 import { effort } from './effort'
 import { codestyle } from './codestyle'
 import { typescript } from './typescript'
@@ -59,6 +60,7 @@ export const PROMPTS: Prompt[] = [
   ...role,
   ...agent,
   ...workflow,
+  ...method,
   ...effort,
   ...codestyle,
   ...typescript,

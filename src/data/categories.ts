@@ -36,7 +36,14 @@ export const CATEGORIES: Category[] = [
     label: 'Planning & Workflow',
     group: 'dev',
     description:
-      'Process before and during a change: plan first, incremental steps, verify, commit granularity. Not agent behavior rules.',
+      'Process before and during a change: plan first, incremental steps, verify, commit granularity. Not agent behavior rules or which methodology to follow.',
+  },
+  {
+    id: 'method',
+    label: 'Development Method',
+    group: 'dev',
+    description:
+      'Which discipline to follow across the project: TDD, BDD, spec-first, API-first, DDD, trunk-based, prototype-first. Not the step-by-step process of one change.',
   },
   {
     id: 'effort',

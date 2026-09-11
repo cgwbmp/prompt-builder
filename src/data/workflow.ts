@@ -58,20 +58,6 @@ export const workflow: Prompt[] = [
     category: 'workflow',
   },
   {
-    id: 'workflow.tdd-loop',
-    title: 'Red-green-refactor loop',
-    prompt:
-      'Work in a tight test-driven loop: write one failing test, write the minimum code to pass it, then refactor with the test still green. Repeat for each behavior rather than writing all code first and tests afterward.',
-    category: 'workflow',
-  },
-  {
-    id: 'workflow.spike-then-implement',
-    title: 'Spike, then implement cleanly',
-    prompt:
-      'When the approach is uncertain, do a quick throwaway spike to learn what works, report the findings, then discard it and implement the real version cleanly from the start.',
-    category: 'workflow',
-  },
-  {
     id: 'workflow.one-concern-per-change',
     title: 'One concern per change',
     prompt:
@@ -111,20 +97,6 @@ export const workflow: Prompt[] = [
     title: 'Flag risks before starting',
     prompt:
       'Before implementing, call out the riskiest part of the plan (data migrations, shared interfaces, concurrency, external APIs) and tackle it first so problems appear early rather than at the end.',
-    category: 'workflow',
-  },
-  {
-    id: 'workflow.walking-skeleton',
-    title: 'Walking skeleton first',
-    prompt:
-      'Build the thinnest possible end-to-end slice that works (input to output through every layer) before filling in any single layer in depth. Widen it feature by feature once the skeleton runs.',
-    category: 'workflow',
-  },
-  {
-    id: 'workflow.interfaces-first',
-    title: 'Define interfaces first',
-    prompt:
-      'Start by writing the types, function signatures, and module boundaries for the change, get those agreed, and only then fill in the implementations.',
     category: 'workflow',
   },
   {
@@ -188,13 +160,6 @@ export const workflow: Prompt[] = [
     title: 'Feature-flag large changes',
     prompt:
       'For changes too large to ship in one small step, integrate them incrementally behind a feature flag that defaults off, so each increment can merge to main without exposing unfinished behavior.',
-    category: 'workflow',
-  },
-  {
-    id: 'workflow.write-spec-for-big-features',
-    title: 'Spec big features first',
-    prompt:
-      'For any feature that spans several files or sessions, first write a short spec naming the files and interfaces involved, what is out of scope, and an end-to-end verification step. Implement from the spec, not from memory.',
     category: 'workflow',
   },
   {

@@ -44,13 +44,6 @@ export const architecture: Prompt[] = [
     category: 'architecture',
   },
   {
-    id: 'architecture.interfaces-before-implementations',
-    title: 'Interfaces before implementations',
-    prompt:
-      "Define the contract first (types, function signatures, API schema, event shapes) and check it against the callers' needs before writing the implementation. Implementations are cheap to change; contracts are not.",
-    category: 'architecture',
-  },
-  {
     id: 'architecture.write-an-adr',
     title: 'Write an ADR',
     prompt:
