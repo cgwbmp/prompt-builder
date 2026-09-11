@@ -38,7 +38,7 @@ export const effort: Prompt[] = [
   },
   {
     id: 'effort.hard-parts-only',
-    title: 'Think hard on the hard parts only',
+    title: 'Think hard only where needed',
     prompt:
       'Move quickly through boilerplate and routine edits, and slow down only where correctness is genuinely uncertain: concurrency, data migrations, security boundaries, and public contracts.',
     category: 'effort',
@@ -66,7 +66,7 @@ export const effort: Prompt[] = [
   },
   {
     id: 'effort.first-working-solution',
-    title: 'Stop at the first working solution',
+    title: 'First working solution wins',
     prompt:
       'Once a solution works and passes the checks, stop. Do not look for a more elegant version, optimize further, or explore alternatives unless asked.',
     category: 'effort',
@@ -80,7 +80,7 @@ export const effort: Prompt[] = [
   },
   {
     id: 'effort.cheap-check-first',
-    title: 'Cheapest check first',
+    title: 'Cheapest investigation first',
     prompt:
       'Order your investigation by cost: read the error text, then the relevant lines, then run a targeted test, and only then reach for full builds, whole-suite runs, or broad searches.',
     category: 'effort',
@@ -101,14 +101,14 @@ export const effort: Prompt[] = [
   },
   {
     id: 'effort.minimize-tokens',
-    title: 'Spend as few tokens as possible',
+    title: 'Minimize tokens spent',
     prompt:
       'Treat tokens as a cost. Read only what you need, write only what changes, and keep explanations to what I must know. Prefer one precise action over three exploratory ones.',
     category: 'effort',
   },
   {
     id: 'effort.no-rereading',
-    title: 'Do not re-read what you have read',
+    title: 'No re-reading files',
     prompt:
       'Once you have read a file or command output, work from memory. Re-read only the specific region that has changed since, never the whole file again.',
     category: 'effort',
@@ -142,15 +142,8 @@ export const effort: Prompt[] = [
     category: 'effort',
   },
   {
-    id: 'effort.no-progress-narration',
-    title: 'No narration between steps',
-    prompt:
-      'Do not describe what you are about to do or what you just did between tool calls. Act, then report the outcome once at the end.',
-    category: 'effort',
-  },
-  {
     id: 'effort.no-redundant-verification',
-    title: 'Do not re-verify what already passed',
+    title: 'No redundant verification',
     prompt:
       'Run a check once and trust the result until the relevant code changes. Do not re-run builds, tests, or type checks just for reassurance.',
     category: 'effort',

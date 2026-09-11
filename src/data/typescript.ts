@@ -47,7 +47,7 @@ export const typescript: Prompt[] = [
     id: 'typescript.no-type-assertions',
     title: 'Avoid as casts',
     prompt:
-      "Do not use `as` type assertions except `as const`. Replace them with type guards, control-flow narrowing, or schema parsing. If a cast is truly unavoidable, add a comment explaining why it is safe and never chain `as unknown as T`.",
+      'Do not use `as` type assertions except `as const`. Replace them with type guards, control-flow narrowing, or schema parsing. If a cast is truly unavoidable, add a comment explaining why it is safe and never chain `as unknown as T`.',
     category: 'typescript',
   },
   {

@@ -219,24 +219,10 @@ export const git: Prompt[] = [
     category: 'git',
   },
   {
-    id: 'git.commit-lockfiles',
-    title: 'Commit lockfiles',
-    prompt:
-      'Always commit dependency lockfiles (`package-lock.json`, `pnpm-lock.yaml`, `poetry.lock`, `Cargo.lock`, `go.sum`) so every checkout installs identical versions, and update them in the same commit as the manifest change.',
-    category: 'git',
-  },
-  {
     id: 'git.no-secrets-in-history',
     title: 'No secrets in history',
     prompt:
       'Never commit API keys, passwords, tokens, or private keys, even in a branch you plan to squash. If a secret has been committed, treat it as compromised: rotate it first, then purge it from history with `git filter-repo` and force-push only with team agreement.',
-    category: 'git',
-  },
-  {
-    id: 'git.never-skip-hooks',
-    title: 'Never bypass hooks',
-    prompt:
-      'Do not use `--no-verify` to skip pre-commit or commit-msg hooks. If a hook fails, fix the underlying problem or fix the hook; bypassing it hides the failure until CI.',
     category: 'git',
   },
   {

@@ -107,41 +107,6 @@ export const frontend: Prompt[] = [
     category: 'frontend',
   },
   {
-    id: 'frontend.semantic-html',
-    title: 'Semantic HTML first',
-    prompt:
-      'Use `<button>` for actions, `<a href>` for navigation, and landmarks (`<header>`, `<nav>`, `<main>`, `<footer>`, `<section>` with a heading) for structure, with heading levels in order. Never attach `onClick` to a `<div>` or `<span>` to make it interactive.',
-    category: 'frontend',
-  },
-  {
-    id: 'frontend.accessible-names',
-    title: 'Every control has a name',
-    prompt:
-      'Give every input a visible `<label htmlFor>`, every icon-only button an `aria-label`, and every meaningful image descriptive `alt` text (empty `alt=""` for decorative images). Placeholder text is not a label.',
-    category: 'frontend',
-  },
-  {
-    id: 'frontend.keyboard-and-focus',
-    title: 'Keyboard operable with visible focus',
-    prompt:
-      'Make every interactive element reachable by Tab and operable with Enter, Space, Escape, and arrow keys as appropriate, following the WAI-ARIA Authoring Practices patterns for menus, tabs, and dialogs. Keep a visible `:focus-visible` ring, move focus into dialogs on open and back to the trigger on close, and trap focus while a modal is open.',
-    category: 'frontend',
-  },
-  {
-    id: 'frontend.aria-minimal',
-    title: 'Native elements before ARIA',
-    prompt:
-      'Prefer native elements (`<dialog>`, `<details>`, `<select>`, `<progress>`) over ARIA-decorated divs, and add ARIA roles and states only when no native equivalent exists. Never add ARIA that contradicts the native role, and announce dynamic changes with `aria-live` regions.',
-    category: 'frontend',
-  },
-  {
-    id: 'frontend.contrast-and-motion',
-    title: 'Contrast and reduced motion',
-    prompt:
-      'Meet WCAG AA contrast (4.5:1 for text, 3:1 for large text and UI borders), never convey meaning by color alone, and respect `prefers-reduced-motion` by disabling or shortening non-essential animations.',
-    category: 'frontend',
-  },
-  {
     id: 'frontend.tailwind-conventions',
     title: 'Tailwind class conventions',
     prompt:

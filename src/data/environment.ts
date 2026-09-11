@@ -226,13 +226,6 @@ export const environment: Prompt[] = [
     category: 'environment',
   },
   {
-    id: 'environment.config-via-env-vars',
-    title: 'Config only via environment variables',
-    prompt:
-      'All configuration must come from environment variables, following the Twelve-Factor config rule. Do not hardcode hostnames, ports, credentials, or feature flags, do not read per-environment config files, and read each variable once at startup with validation and a clear error when it is missing.',
-    category: 'environment',
-  },
-  {
     id: 'environment.dev-prod-parity',
     title: 'Dev/prod parity',
     prompt:

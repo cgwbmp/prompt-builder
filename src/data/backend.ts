@@ -101,9 +101,9 @@ export const backend: Prompt[] = [
   },
   {
     id: 'backend.structured-logging',
-    title: 'Structured request logging',
+    title: 'One log line per request',
     prompt:
-      'Emit one structured JSON log line per request to stdout with method, route template, status, duration, request id, and authenticated principal id. Never log request bodies, tokens, passwords, or personal data, and use log levels deliberately (error for faults, warn for expected failures, info for lifecycle, debug off in production).',
+      'Emit one structured log line per request with method, route template, status, duration, request id, and authenticated principal id. Never log request bodies, tokens, passwords, or personal data.',
     category: 'backend',
   },
   {
@@ -236,7 +236,7 @@ export const backend: Prompt[] = [
     id: 'backend.cors-allowlist',
     title: 'Explicit CORS policy',
     prompt:
-      'Configure CORS with an explicit allowlist of origins, methods, and headers, never `Access-Control-Allow-Origin: *` together with credentials. Cache preflight responses with `Access-Control-Max-Age` and keep the list in configuration, not code.',
+      'Configure CORS with an explicit allowlist of origins, methods, and headers; never reflect the request Origin header back, and never combine a wildcard origin with credentials. Cache preflight responses with `Access-Control-Max-Age` and keep the list in configuration, not code.',
     category: 'backend',
   },
   {

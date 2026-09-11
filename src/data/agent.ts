@@ -10,7 +10,7 @@ export const agent: Prompt[] = [
   },
   {
     id: 'agent.suggest-dont-do',
-    title: 'Suggest, don\'t do',
+    title: "Suggest, don't do",
     prompt: 'If you think extra work is warranted, list it as a suggestion at the end instead of doing it.',
     category: 'agent',
   },
@@ -58,13 +58,6 @@ export const agent: Prompt[] = [
     category: 'agent',
   },
   {
-    id: 'agent.state-assumptions',
-    title: 'State assumptions explicitly',
-    prompt:
-      'When you have to assume something to proceed, say so in one line before the code ("Assuming X because Y") so the assumption can be corrected cheaply.',
-    category: 'agent',
-  },
-  {
     id: 'agent.questions-up-front',
     title: 'All questions up front',
     prompt:
@@ -80,7 +73,7 @@ export const agent: Prompt[] = [
   },
   {
     id: 'agent.only-blocking-questions',
-    title: 'Ask only what changes the work',
+    title: 'Ask only blocking questions',
     prompt:
       'Ask a question only when different answers would lead to materially different code. Decide everything else yourself and list those decisions in one line each.',
     category: 'agent',
@@ -191,13 +184,6 @@ export const agent: Prompt[] = [
     category: 'agent',
   },
   {
-    id: 'agent.no-destructive-git',
-    title: 'No destructive git commands',
-    prompt:
-      'Never run destructive git operations (force push, reset --hard, checkout -- on uncommitted work, branch -D, rebase of shared branches, history rewriting) unless explicitly told to in this conversation.',
-    category: 'agent',
-  },
-  {
     id: 'agent.no-commit-unless-asked',
     title: 'No commits unless asked',
     prompt:
@@ -230,13 +216,6 @@ export const agent: Prompt[] = [
     title: 'No placeholder code',
     prompt:
       'Do not leave stubs, TODO-only functions, or "implement later" comments in delivered code. Either implement it fully or clearly report that part as unfinished.',
-    category: 'agent',
-  },
-  {
-    id: 'agent.no-apologies-fix',
-    title: 'Fix mistakes, skip apologies',
-    prompt:
-      'When you make a mistake, do not apologize or explain at length. State what went wrong in one sentence and fix it.',
     category: 'agent',
   },
   {
@@ -279,13 +258,6 @@ export const agent: Prompt[] = [
     title: 'Preserve existing behavior',
     prompt:
       'Unless the task is to change behavior, keep all observable behavior identical, including edge cases and error messages. Call out any behavior change you believe is unavoidable before making it.',
-    category: 'agent',
-  },
-  {
-    id: 'agent.summarize-changes',
-    title: 'Summarize every change',
-    prompt:
-      'Finish with a short summary listing each file changed and the one-line reason for the change, so the diff can be reviewed without re-deriving your intent.',
     category: 'agent',
   },
   {
@@ -360,7 +332,7 @@ export const agent: Prompt[] = [
   },
   {
     id: 'agent.no-system-changes',
-    title: 'No global installs or system changes',
+    title: 'No system-level changes',
     prompt:
       'Do not run sudo, install packages globally, modify PATH, shell rc files, or system settings. Everything you need must be installed and run at project scope.',
     category: 'agent',
@@ -374,14 +346,14 @@ export const agent: Prompt[] = [
   },
   {
     id: 'agent.no-self-config-edits',
-    title: 'Do not edit your own config',
+    title: 'Never edit your own config',
     prompt:
       'Do not modify agent configuration files such as CLAUDE.md, the .claude directory, permission settings, or hooks unless I explicitly ask you to.',
     category: 'agent',
   },
   {
     id: 'agent.no-manual-lockfile-edits',
-    title: 'Do not edit lockfiles by hand',
+    title: 'No hand-edited lockfiles',
     prompt:
       'Never edit package-lock.json, yarn.lock, pnpm-lock.yaml, poetry.lock, or similar files directly. Change them only through the package manager.',
     category: 'agent',
@@ -402,7 +374,7 @@ export const agent: Prompt[] = [
   },
   {
     id: 'agent.no-rename-move',
-    title: 'Do not rename or move files',
+    title: 'No renaming or moving files',
     prompt:
       'Keep files where they are and named as they are unless the task explicitly requires renaming or moving them. Propose restructuring separately.',
     category: 'agent',
@@ -430,21 +402,21 @@ export const agent: Prompt[] = [
   },
   {
     id: 'agent.no-infra-edits',
-    title: 'Do not modify CI or infrastructure',
+    title: 'No CI or infrastructure edits',
     prompt:
       'Leave CI pipelines, Dockerfiles, Terraform, Kubernetes manifests, and deployment config unchanged unless the task is specifically about them.',
     category: 'agent',
   },
   {
     id: 'agent.no-data-exfiltration',
-    title: 'Do not send code or data outside',
+    title: 'No data leaves the machine',
     prompt:
       'Never paste project code, data, logs, or credentials into third-party services, paste sites, or external AI tools. Everything stays local unless I say otherwise.',
     category: 'agent',
   },
   {
     id: 'agent.no-communicating-for-me',
-    title: 'Do not communicate on my behalf',
+    title: 'Never communicate on my behalf',
     prompt:
       'Do not post PR comments, open issues, send messages, or write emails in my name. Draft the text and let me send it.',
     category: 'agent',

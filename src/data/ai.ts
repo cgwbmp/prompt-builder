@@ -4,229 +4,267 @@ export const ai: Prompt[] = [
   {
     id: 'ai.system-prompt-instructions',
     title: 'Instructions in system prompt',
-    prompt: 'When implementing an LLM feature, put stable instructions, role, and constraints in the system prompt and keep per-request data in the user message. Do not interleave instructions with user-supplied content.',
+    prompt:
+      'When implementing an LLM feature, put stable instructions, role, and constraints in the system prompt and keep per-request data in the user message. Do not interleave instructions with user-supplied content.',
     category: 'ai',
   },
   {
     id: 'ai.delimit-sections',
     title: 'Delimit prompt sections',
-    prompt: 'In the application prompt templates, separate instructions, context, examples, and user input with explicit delimiters such as XML tags, so the model can tell which parts are instructions and which are data.',
+    prompt:
+      'In the application prompt templates, separate instructions, context, examples, and user input with explicit delimiters such as XML tags, so the model can tell which parts are instructions and which are data.',
     category: 'ai',
   },
   {
     id: 'ai.few-shot-examples',
     title: 'Few-shot examples',
-    prompt: 'Include three to five diverse few-shot examples in the application prompt templates, wrapped in clearly delimited tags and covering edge cases. Review them carefully: the model will copy any mistake they contain.',
+    prompt:
+      'Include three to five diverse few-shot examples in the application prompt templates, wrapped in clearly delimited tags and covering edge cases. Review them carefully: the model will copy any mistake they contain.',
     category: 'ai',
   },
   {
     id: 'ai.positive-instructions',
     title: 'Positive instructions',
-    prompt: "Write the application's prompts as positive instructions (what to do) rather than lists of prohibitions, and put the most important constraint first.",
+    prompt:
+      "Write the application's prompts as positive instructions (what to do) rather than lists of prohibitions, and put the most important constraint first.",
     category: 'ai',
   },
   {
     id: 'ai.long-context-placement',
     title: 'Documents first, question last',
-    prompt: 'When the app sends long documents to the model, place them at the top of the prompt and the task or question at the end. When accuracy matters, ask the model to quote the relevant passages before answering.',
+    prompt:
+      'When the app sends long documents to the model, place them at the top of the prompt and the task or question at the end. When accuracy matters, ask the model to quote the relevant passages before answering.',
     category: 'ai',
   },
   {
     id: 'ai.chain-tasks',
     title: 'Chain small calls',
-    prompt: 'Break complex LLM tasks in the app into a chain of smaller calls with one responsibility each (extract, then classify, then generate), passing validated intermediate results between steps, instead of one giant prompt.',
+    prompt:
+      'Break complex LLM tasks in the app into a chain of smaller calls with one responsibility each (extract, then classify, then generate), passing validated intermediate results between steps, instead of one giant prompt.',
     category: 'ai',
   },
   {
     id: 'ai.structured-output-schema',
     title: 'Structured output via schema',
-    prompt: 'When the app needs machine-readable output from the model, use the provider structured output or JSON schema feature rather than asking for JSON in prose, and validate the parsed result against the schema before using it.',
+    prompt:
+      'When the app needs machine-readable output from the model, use the provider structured output or JSON schema feature rather than asking for JSON in prose, and validate the parsed result against the schema before using it.',
     category: 'ai',
   },
   {
     id: 'ai.output-validation-retry',
     title: 'Retry once on invalid output',
-    prompt: 'When model output fails schema validation in the app, retry once with the validation error appended to the conversation, then fall back. Never loop indefinitely on invalid output.',
+    prompt:
+      'When model output fails schema validation in the app, retry once with the validation error appended to the conversation, then fall back. Never loop indefinitely on invalid output.',
     category: 'ai',
   },
   {
     id: 'ai.tool-definitions',
     title: 'Clear, minimal tool definitions',
-    prompt: 'Define each tool exposed to the model with a precise name, a description that says when to use it and when not to, and a minimal input schema with required fields marked and no unused parameters.',
+    prompt:
+      'Define each tool exposed to the model with a precise name, a description that says when to use it and when not to, and a minimal input schema with required fields marked and no unused parameters.',
     category: 'ai',
   },
   {
     id: 'ai.tool-errors-as-results',
     title: 'Tool errors as results',
-    prompt: 'Return tool execution failures to the model as error-flagged tool results with a short actionable message, rather than throwing and aborting the conversation loop.',
+    prompt:
+      'Return tool execution failures to the model as error-flagged tool results with a short actionable message, rather than throwing and aborting the conversation loop.',
     category: 'ai',
   },
   {
     id: 'ai.parallel-tool-results',
     title: 'Batch parallel tool results',
-    prompt: 'When the model issues several tool calls in one turn, execute them concurrently and return all results together in a single message, matched to their call ids.',
+    prompt:
+      'When the model issues several tool calls in one turn, execute them concurrently and return all results together in a single message, matched to their call ids.',
     category: 'ai',
   },
   {
     id: 'ai.idempotent-tools',
     title: 'Idempotent tool functions',
-    prompt: 'Make tool functions idempotent where possible and guard side-effecting tools with an idempotency key, because the model may retry or duplicate a call.',
+    prompt:
+      'Make tool functions idempotent where possible and guard side-effecting tools with an idempotency key, because the model may retry or duplicate a call.',
     category: 'ai',
   },
   {
     id: 'ai.least-privilege-tools',
     title: 'Least-privilege tools',
-    prompt: 'Give the model the minimum set of tools and permissions the task needs, require human confirmation for destructive actions, and scope credentials per tool (OWASP LLM06, Excessive Agency).',
+    prompt:
+      'Give the model the minimum set of tools and permissions the task needs, require human confirmation for destructive actions, and scope credentials per tool (OWASP LLM06, Excessive Agency).',
     category: 'ai',
   },
   {
     id: 'ai.agent-loop-limits',
     title: 'Cap agent loops',
-    prompt: 'Cap every agent loop with a maximum iteration count and a total token budget, and stop with a clear error when either is hit, so a confused model cannot run indefinitely (OWASP LLM10, Unbounded Consumption).',
+    prompt:
+      'Cap every agent loop with a maximum iteration count and a total token budget, and stop with a clear error when either is hit, so a confused model cannot run indefinitely (OWASP LLM10, Unbounded Consumption).',
     category: 'ai',
   },
   {
     id: 'ai.handle-refusals',
     title: 'Handle refusals',
-    prompt: 'Treat model refusals and safety stops as a normal branch in the application: check the stop reason before reading content, and show the user a clear message instead of an empty or garbled response.',
+    prompt:
+      'Treat model refusals and safety stops as a normal branch in the application: check the stop reason before reading content, and show the user a clear message instead of an empty or garbled response.',
     category: 'ai',
   },
   {
     id: 'ai.retry-backoff',
     title: 'Retries with backoff',
-    prompt: 'Retry rate-limit and server errors from the LLM API with exponential backoff and jitter, capped at a small number of attempts. Never retry 4xx validation errors.',
+    prompt:
+      'Retry rate-limit and server errors from the LLM API with exponential backoff and jitter, capped at a small number of attempts. Never retry 4xx validation errors.',
     category: 'ai',
   },
   {
     id: 'ai.timeouts',
     title: 'Explicit timeouts',
-    prompt: 'Set an explicit timeout on every LLM call. For long generations, stream the response so a slow model does not hold a request open past the HTTP timeout.',
+    prompt:
+      'Set an explicit timeout on every LLM call. For long generations, stream the response so a slow model does not hold a request open past the HTTP timeout.',
     category: 'ai',
   },
   {
     id: 'ai.fallbacks',
     title: 'Fallback for every call',
-    prompt: 'Design a fallback for every LLM call: a cached answer, a simpler model, a rule-based default, or a graceful error. The feature must degrade rather than fail when the model is unavailable.',
+    prompt:
+      'Design a fallback for every LLM call: a cached answer, a simpler model, a rule-based default, or a graceful error. The feature must degrade rather than fail when the model is unavailable.',
     category: 'ai',
   },
   {
     id: 'ai.stream-responses',
     title: 'Stream to the user',
-    prompt: 'Stream model output to the user for any response longer than a sentence or two, rendering tokens as they arrive so perceived latency stays low.',
+    prompt:
+      'Stream model output to the user for any response longer than a sentence or two, rendering tokens as they arrive so perceived latency stays low.',
     category: 'ai',
   },
   {
     id: 'ai.token-budget',
     title: 'Token budget per request',
-    prompt: 'Enforce a token budget per request: count or estimate input tokens before sending, trim the oldest context first when over budget, and set a max output token limit appropriate to the task.',
+    prompt:
+      'Enforce a token budget per request: count or estimate input tokens before sending, trim the oldest context first when over budget, and set a max output token limit appropriate to the task.',
     category: 'ai',
   },
   {
     id: 'ai.conversation-memory',
     title: 'Bounded conversation history',
-    prompt: 'Do not resend the entire conversation history forever. Summarize or truncate turns beyond a window, always keep the system prompt and key facts, and store the full transcript separately.',
+    prompt:
+      'Do not resend the entire conversation history forever. Summarize or truncate turns beyond a window, always keep the system prompt and key facts, and store the full transcript separately.',
     category: 'ai',
   },
   {
     id: 'ai.prompt-caching',
     title: 'Structure for prompt caching',
-    prompt: 'Structure prompts for caching: place static content (system prompt, tool definitions, examples) first and volatile content (timestamps, user data) last, and keep the static prefix byte-identical across requests.',
+    prompt:
+      'Structure prompts for caching: place static content (system prompt, tool definitions, examples) first and volatile content (timestamps, user data) last, and keep the static prefix byte-identical across requests.',
     category: 'ai',
   },
   {
     id: 'ai.model-selection',
     title: 'Choose model by task',
-    prompt: 'Choose the model by task: use a small fast model for classification, extraction, and routing, and reserve the most capable model for reasoning-heavy or high-stakes steps. Confirm quality on the eval set before downgrading.',
+    prompt:
+      'Choose the model by task: use a small fast model for classification, extraction, and routing, and reserve the most capable model for reasoning-heavy or high-stakes steps. Confirm quality on the eval set before downgrading.',
     category: 'ai',
   },
   {
     id: 'ai.cost-tracking',
     title: 'Track tokens and cost',
-    prompt: 'Record input and output token usage for every LLM call, aggregate cost per feature and per user, and set alerts on budget thresholds before the feature ships.',
+    prompt:
+      'Record input and output token usage for every LLM call, aggregate cost per feature and per user, and set alerts on budget thresholds before the feature ships.',
     category: 'ai',
   },
   {
     id: 'ai.rate-limit-users',
     title: 'Rate limit LLM endpoints',
-    prompt: 'Rate limit LLM-backed endpoints per user and per API key, and cap input length, so a single client cannot exhaust quota or run up cost.',
+    prompt:
+      'Rate limit LLM-backed endpoints per user and per API key, and cap input length, so a single client cannot exhaust quota or run up cost.',
     category: 'ai',
   },
   {
     id: 'ai.eval-before-change',
     title: 'Eval set before prompt changes',
-    prompt: 'Do not change a production prompt without running it against an eval set of representative inputs with expected outputs, and compare the scores against the current prompt before shipping.',
+    prompt:
+      'Do not change a production prompt without running it against an eval set of representative inputs with expected outputs, and compare the scores against the current prompt before shipping.',
     category: 'ai',
   },
   {
     id: 'ai.llm-as-judge',
     title: 'LLM-as-judge with rubric',
-    prompt: 'When using a model to grade another model output, give the judge an explicit rubric and scoring scale, include reference answers where possible, and spot-check judge scores against human labels.',
+    prompt:
+      'When using a model to grade another model output, give the judge an explicit rubric and scoring scale, include reference answers where possible, and spot-check judge scores against human labels.',
     category: 'ai',
   },
   {
     id: 'ai.deterministic-tests',
     title: 'Deterministic LLM tests',
-    prompt: 'In automated tests, use temperature 0 or equivalent deterministic settings, record and replay real model responses, and never let the test suite depend on live model calls.',
+    prompt:
+      'In automated tests, use temperature 0 or equivalent deterministic settings, record and replay real model responses, and never let the test suite depend on live model calls.',
     category: 'ai',
   },
   {
     id: 'ai.log-prompts-outputs',
     title: 'Log prompts and outputs',
-    prompt: 'Log the full prompt, model, parameters, and raw output of every LLM call under a request id, with sensitive fields redacted, so failures can be reproduced and prompts regression-tested.',
+    prompt:
+      'Log the full prompt, model, parameters, and raw output of every LLM call under a request id, with sensitive fields redacted, so failures can be reproduced and prompts regression-tested.',
     category: 'ai',
   },
   {
     id: 'ai.version-prompts',
     title: 'Version prompts',
-    prompt: 'Keep prompts in version control as files or named constants, not inline strings scattered through code. Give each prompt a version id and log it with every call.',
+    prompt:
+      'Keep prompts in version control as files or named constants, not inline strings scattered through code. Give each prompt a version id and log it with every call.',
     category: 'ai',
   },
   {
     id: 'ai.pii-handling',
     title: 'Minimize PII sent to models',
-    prompt: 'Do not send personal or sensitive data to the model unless the feature requires it. Redact or tokenize PII before the call and check the provider data retention terms (OWASP LLM02).',
+    prompt:
+      'Do not send personal or sensitive data to the model unless the feature requires it. Redact or tokenize PII before the call and check the provider data retention terms (OWASP LLM02).',
     category: 'ai',
   },
   {
     id: 'ai.no-secrets-in-prompts',
     title: 'No secrets in prompts',
-    prompt: 'Never put API keys, credentials, or internal URLs in prompts or system messages; the model may echo them back (OWASP LLM07, System Prompt Leakage).',
+    prompt:
+      'Never put API keys, credentials, or internal URLs in prompts or system messages; the model may echo them back (OWASP LLM07, System Prompt Leakage).',
     category: 'ai',
   },
   {
     id: 'ai.prompt-injection-defense',
     title: 'Prompt injection defense',
-    prompt: 'Treat everything the model reads from users, documents, web pages, or tool results as untrusted data. Wrap it in delimiters, tell the model it is data and not instructions, and never let it override the system prompt (OWASP LLM01).',
+    prompt:
+      'Treat everything the model reads from users, documents, web pages, or tool results as untrusted data. Wrap it in delimiters, tell the model it is data and not instructions, and never let it override the system prompt (OWASP LLM01).',
     category: 'ai',
   },
   {
     id: 'ai.output-handling',
     title: 'Sanitize model output',
-    prompt: 'Never execute, render as HTML, or pass to a shell or database any model output without validation and escaping. Treat model output with the same suspicion as user input (OWASP LLM05).',
+    prompt:
+      'Never execute, render as HTML, or pass to a shell or database any model output without validation and escaping. Treat model output with the same suspicion as user input (OWASP LLM05).',
     category: 'ai',
   },
   {
     id: 'ai.rag-chunking',
     title: 'RAG chunking strategy',
-    prompt: 'For retrieval-augmented generation, chunk documents on semantic boundaries (headings, paragraphs) with modest overlap, store source metadata with each chunk, and tune chunk size against measured retrieval quality.',
+    prompt:
+      'For retrieval-augmented generation, chunk documents on semantic boundaries (headings, paragraphs) with modest overlap, store source metadata with each chunk, and tune chunk size against measured retrieval quality.',
     category: 'ai',
   },
   {
     id: 'ai.rag-citations',
     title: 'Cite retrieved sources',
-    prompt: 'When the model answers from retrieved documents, require it to cite the chunk or source id for each claim, and render those citations to the user so answers can be verified.',
+    prompt:
+      'When the model answers from retrieved documents, require it to cite the chunk or source id for each claim, and render those citations to the user so answers can be verified.',
     category: 'ai',
   },
   {
     id: 'ai.rag-answer-from-context',
     title: 'Answer only from context',
-    prompt: 'Instruct the model in the RAG prompt to answer only from the provided context and to say it does not know when the context is insufficient, rather than filling gaps from general knowledge.',
+    prompt:
+      'Instruct the model in the RAG prompt to answer only from the provided context and to say it does not know when the context is insufficient, rather than filling gaps from general knowledge.',
     category: 'ai',
   },
   {
     id: 'ai.embeddings-consistency',
     title: 'Consistent embeddings',
-    prompt: 'Use the same embedding model and text preprocessing for indexing and querying, store the model name alongside the vectors, and re-index the corpus when the model changes.',
+    prompt:
+      'Use the same embedding model and text preprocessing for indexing and querying, store the model name alongside the vectors, and re-index the corpus when the model changes.',
     category: 'ai',
   },
 ]

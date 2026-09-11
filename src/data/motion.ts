@@ -122,7 +122,7 @@ export const motion: Prompt[] = [
   },
   {
     id: 'motion.modal-fade-scale',
-    title: 'Modal fade and scale from 0.96',
+    title: 'Modal fade and scale',
     prompt:
       'Open modals by fading the backdrop over 200ms while the dialog fades in and scales from 0.96 to 1 with ease-out; close with a 150ms fade and scale back to 0.96 with ease-in. Do not slide dialogs in from off-screen on desktop.',
     category: 'motion',
@@ -234,7 +234,7 @@ export const motion: Prompt[] = [
   },
   {
     id: 'motion.motion-tokens',
-    title: 'Motion tokens, not ad hoc values',
+    title: 'Motion tokens, not magic values',
     prompt:
       'Define motion as a small token set (duration-fast 100ms, duration-base 200ms, duration-slow 300ms; ease-out, ease-in, ease-standard curves) and use only those tokens across the interface. Any component needing a value outside the set must justify it in a comment.',
     category: 'motion',

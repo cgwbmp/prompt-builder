@@ -7,6 +7,7 @@ import { CATEGORIES, CATEGORY_BY_ID, CATEGORY_GROUPS, PROMPTS } from '../src/dat
 const errors: string[] = []
 const seen = new Set<string>()
 const seenText = new Map<string, string>()
+const seenTitle = new Map<string, string>()
 
 for (const p of PROMPTS) {
   const where = `prompt "${p.id}"`
@@ -23,6 +24,13 @@ for (const p of PROMPTS) {
   }
 
   if (!p.title?.trim()) errors.push(`${where}: empty title`)
+  const title = p.title?.trim().toLowerCase()
+  if (title) {
+    const prior = seenTitle.get(title)
+    if (prior) errors.push(`${where}: duplicate title (same as "${prior}")`)
+    else seenTitle.set(title, p.id)
+  }
+  if (title && title.split(/\s+/).length > 5) errors.push(`${where}: title longer than 5 words`)
   if (!p.prompt?.trim()) errors.push(`${where}: empty prompt`)
 
   if (!CATEGORY_BY_ID.has(p.category)) errors.push(`${where}: unknown category "${p.category}"`)

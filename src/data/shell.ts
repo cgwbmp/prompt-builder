@@ -32,8 +32,7 @@ export const shell: Prompt[] = [
   {
     id: 'shell.command-substitution',
     title: '$(...) not backticks',
-    prompt:
-      'Use `$(command)` for command substitution, never backticks; it nests cleanly and is easier to read.',
+    prompt: 'Use `$(command)` for command substitution, never backticks; it nests cleanly and is easier to read.',
     category: 'shell',
   },
   {

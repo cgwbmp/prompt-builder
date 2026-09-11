@@ -17,13 +17,13 @@ export function CategoryBar({
   active,
   onChange,
   selectedCounts,
-  // totalSelected,
+  totalSelected,
   favoriteCount,
 }: CategoryBarProps) {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Quick filters">
-        {/* <Chip label="All" active={active === ALL} count={totalSelected} onClick={() => onChange(ALL)} /> */}
+        <Chip label="All" active={active === ALL} count={totalSelected} onClick={() => onChange(ALL)} />
         <Chip
           label={`★ Favorites${favoriteCount > 0 ? ` (${favoriteCount})` : ''}`}
           title="Prompts you starred"

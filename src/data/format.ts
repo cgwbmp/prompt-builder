@@ -4,19 +4,22 @@ export const format: Prompt[] = [
   {
     id: 'format.markdown',
     title: 'Markdown with headers',
-    prompt: 'Format the answer in Markdown. Use headers for sections, bullet lists for parallel items, and fenced code blocks for code.',
+    prompt:
+      'Format the answer in Markdown. Use headers for sections, bullet lists for parallel items, and fenced code blocks for code.',
     category: 'format',
   },
   {
     id: 'format.bullets',
     title: 'Bullet points only',
-    prompt: 'Answer only in bullet points. One idea per bullet, at most two sentences each. No introduction or conclusion.',
+    prompt:
+      'Answer only in bullet points. One idea per bullet, at most two sentences each. No introduction or conclusion.',
     category: 'format',
   },
   {
     id: 'format.table',
     title: 'Comparison table',
-    prompt: 'Present the comparison as a Markdown table with one row per option and one column per criterion. Add a one-sentence recommendation below the table.',
+    prompt:
+      'Present the comparison as a Markdown table with one row per option and one column per criterion. Add a one-sentence recommendation below the table.',
     category: 'format',
   },
   {
@@ -34,7 +37,8 @@ export const format: Prompt[] = [
   {
     id: 'format.code-only',
     title: 'Code only',
-    prompt: 'Respond with code only. No explanation, no commentary, no introduction. If a note is essential, put it in a code comment.',
+    prompt:
+      'Respond with code only. No explanation, no commentary, no introduction. If a note is essential, put it in a code comment.',
     category: 'format',
   },
   {
@@ -46,43 +50,50 @@ export const format: Prompt[] = [
   {
     id: 'format.unified-diff',
     title: 'Unified diff',
-    prompt: 'Return changes as a unified diff (diff -u format) with file headers and three lines of context, ready to apply with git apply or patch.',
+    prompt:
+      'Return changes as a unified diff (diff -u format) with file headers and three lines of context, ready to apply with git apply or patch.',
     category: 'format',
   },
   {
     id: 'format.full-file',
     title: 'Full file contents',
-    prompt: 'Return the complete file contents after the change, not a fragment. Do not use placeholders such as "// ... rest of the file" or "// unchanged".',
+    prompt:
+      'Return the complete file contents after the change, not a fragment. Do not use placeholders such as "// ... rest of the file" or "// unchanged".',
     category: 'format',
   },
   {
     id: 'format.only-changed-snippets',
     title: 'Changed snippets only',
-    prompt: 'Show only the changed lines plus enough surrounding context to locate them, marking omitted code with a single comment line. Do not repeat unchanged functions.',
+    prompt:
+      'Show only the changed lines plus enough surrounding context to locate them, marking omitted code with a single comment line. Do not repeat unchanged functions.',
     category: 'format',
   },
   {
     id: 'format.file-path-header',
     title: 'File path before each block',
-    prompt: 'Before each code block, put the file path on its own line (for example `src/utils/date.ts`) so the block can be mapped to a file.',
+    prompt:
+      'Before each code block, put the file path on its own line (for example `src/utils/date.ts`) so the block can be mapped to a file.',
     category: 'format',
   },
   {
     id: 'format.one-block-per-file',
     title: 'One code block per file',
-    prompt: 'Use exactly one code block per file. Do not split a file across several blocks or combine several files in one block.',
+    prompt:
+      'Use exactly one code block per file. Do not split a file across several blocks or combine several files in one block.',
     category: 'format',
   },
   {
     id: 'format.language-tag',
     title: 'Language tag on fences',
-    prompt: 'Tag every fenced code block with its language (ts, python, bash, json, and so on) so it highlights correctly.',
+    prompt:
+      'Tag every fenced code block with its language (ts, python, bash, json, and so on) so it highlights correctly.',
     category: 'format',
   },
   {
     id: 'format.commands-block',
     title: 'Copyable shell commands',
-    prompt: 'Put shell commands in their own bash code block, one command per line, without a leading $ prompt, so they can be copied and run directly.',
+    prompt:
+      'Put shell commands in their own bash code block, one command per line, without a leading $ prompt, so they can be copied and run directly.',
     category: 'format',
   },
   {
@@ -94,37 +105,43 @@ export const format: Prompt[] = [
   {
     id: 'format.line-references',
     title: 'path:line references',
-    prompt: 'Reference code locations as path:line (for example src/app.ts:42) rather than describing where something is in prose.',
+    prompt:
+      'Reference code locations as path:line (for example src/app.ts:42) rather than describing where something is in prose.',
     category: 'format',
   },
   {
     id: 'format.no-code-in-prose',
     title: 'No code in prose',
-    prompt: 'Do not embed code in prose sentences. Put every identifier, command, and snippet in inline code or a fenced block.',
+    prompt:
+      'Do not embed code in prose sentences. Put every identifier, command, and snippet in inline code or a fenced block.',
     category: 'format',
   },
   {
     id: 'format.numbered-steps',
     title: 'Numbered steps',
-    prompt: 'Present procedures as a numbered list with one action per step, each starting with a verb, and the expected result where it is not obvious.',
+    prompt:
+      'Present procedures as a numbered list with one action per step, each starting with a verb, and the expected result where it is not obvious.',
     category: 'format',
   },
   {
     id: 'format.checklist',
     title: 'Markdown checklist',
-    prompt: 'Format the response as a checklist using "- [ ]" items that can be pasted into a Markdown document or issue.',
+    prompt:
+      'Format the response as a checklist using "- [ ]" items that can be pasted into a Markdown document or issue.',
     category: 'format',
   },
   {
     id: 'format.qa-pairs',
     title: 'Question and answer pairs',
-    prompt: 'When answering several questions, repeat each question as a bold line followed by its answer, in the order asked.',
+    prompt:
+      'When answering several questions, repeat each question as a bold line followed by its answer, in the order asked.',
     category: 'format',
   },
   {
     id: 'format.fixed-sections',
     title: 'Fixed section template',
-    prompt: 'Structure every response with the same sections in this order: Summary, Changes, How to verify, Open questions. Leave a section empty rather than omitting it.',
+    prompt:
+      'Structure every response with the same sections in this order: Summary, Changes, How to verify, Open questions. Leave a section empty rather than omitting it.',
     category: 'format',
   },
   {
@@ -136,37 +153,43 @@ export const format: Prompt[] = [
   {
     id: 'format.file-tree',
     title: 'File tree for new files',
-    prompt: 'When proposing new files or directories, show the resulting layout as an indented file tree in a code block.',
+    prompt:
+      'When proposing new files or directories, show the resulting layout as an indented file tree in a code block.',
     category: 'format',
   },
   {
     id: 'format.max-lines',
     title: 'Under 20 lines',
-    prompt: 'Keep the entire response under 20 lines. If the answer needs more, give the essential part and offer the rest on request.',
+    prompt:
+      'Keep the entire response under 20 lines. If the answer needs more, give the essential part and offer the rest on request.',
     category: 'format',
   },
   {
     id: 'format.no-structure-for-short',
     title: 'No structure for short answers',
-    prompt: 'For answers shorter than a paragraph, do not use headers, bullets, or bold. Just write the sentence or two.',
+    prompt:
+      'For answers shorter than a paragraph, do not use headers, bullets, or bold. Just write the sentence or two.',
     category: 'format',
   },
   {
     id: 'format.prose-no-bullets',
     title: 'Flowing prose, no lists',
-    prompt: 'Write in flowing prose paragraphs. Do not use bullet points, numbered lists, or headers. Reserve Markdown for inline code and code blocks.',
+    prompt:
+      'Write in flowing prose paragraphs. Do not use bullet points, numbered lists, or headers. Reserve Markdown for inline code and code blocks.',
     category: 'format',
   },
   {
     id: 'format.plain-text',
     title: 'Plain text, no Markdown',
-    prompt: 'Respond in plain text with no Markdown at all: no asterisks, no headers, no fences. Indent code by four spaces.',
+    prompt:
+      'Respond in plain text with no Markdown at all: no asterisks, no headers, no fences. Indent code by four spaces.',
     category: 'format',
   },
   {
     id: 'format.header-levels',
     title: 'Limit header levels',
-    prompt: 'Use only level-2 (##) and level-3 (###) headers. No level-1 header and no more than two levels of nesting.',
+    prompt:
+      'Use only level-2 (##) and level-3 (###) headers. No level-1 header and no more than two levels of nesting.',
     category: 'format',
   },
   {
@@ -184,13 +207,15 @@ export const format: Prompt[] = [
   {
     id: 'format.collapsible-details',
     title: 'Collapse long output',
-    prompt: 'Put long logs, stack traces, or full file dumps inside <details><summary>...</summary> blocks so the main answer stays scannable.',
+    prompt:
+      'Put long logs, stack traces, or full file dumps inside <details><summary>...</summary> blocks so the main answer stays scannable.',
     category: 'format',
   },
   {
     id: 'format.json-schema',
     title: 'JSON conforming to schema',
-    prompt: 'Respond with JSON that conforms to the schema given in the request: include every required field, use null for unknown values, and do not add fields that are not in the schema.',
+    prompt:
+      'Respond with JSON that conforms to the schema given in the request: include every required field, use null for unknown values, and do not add fields that are not in the schema.',
     category: 'format',
   },
 ]

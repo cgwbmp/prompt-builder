@@ -156,13 +156,6 @@ export const color: Prompt[] = [
     category: 'color',
   },
   {
-    id: 'color.not-color-alone',
-    title: 'Never rely on color alone',
-    prompt:
-      'Never convey meaning through color alone. Pair every color-coded state with a second cue such as an icon, label, pattern, underline, or weight change, so the information survives grayscale.',
-    category: 'color',
-  },
-  {
     id: 'color.css-variables',
     title: 'Colors as CSS variables',
     prompt:
@@ -223,20 +216,6 @@ export const color: Prompt[] = [
     title: 'Text hierarchy with solid tokens',
     prompt:
       'Define three text colors as solid tokens: primary for headings and body, secondary for supporting text, and tertiary or disabled for hints and placeholders. Do not create text hierarchy with opacity on a single color, since that breaks on tinted or image backgrounds.',
-    category: 'color',
-  },
-  {
-    id: 'color.dataviz-categorical',
-    title: 'Categorical chart palette',
-    prompt:
-      'For charts with distinct categories, define a categorical palette of at most 6-8 colors with clearly different hues and similar lightness, ordered so adjacent series contrast well. Assign colors consistently to the same category across every chart.',
-    category: 'color',
-  },
-  {
-    id: 'color.chart-sequential',
-    title: 'Sequential chart palette',
-    prompt:
-      'For quantities on a scale (heatmaps, choropleths, intensity), use a single-hue or two-hue sequential palette that runs from light to dark with evenly spaced perceptual lightness steps. Use a diverging palette with a neutral midpoint only when data has a meaningful center such as zero.',
     category: 'color',
   },
   {

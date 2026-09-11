@@ -21,73 +21,85 @@ export const CATEGORIES: Category[] = [
     id: 'role',
     label: 'Role / Persona',
     group: 'dev',
-    description: 'Who the AI acts as: senior engineer, security reviewer, SRE, DBA, tech lead. Only identity and expertise, no task rules.',
+    description:
+      'Who the AI acts as: senior engineer, security reviewer, SRE, DBA, tech lead. Only identity and expertise, no task rules.',
   },
   {
     id: 'agent',
     label: 'Agent Working Rules',
     group: 'dev',
-    description: 'How an AI coding agent must behave: scope discipline, minimal diffs, when to ask, honesty, tooling limits. Not code style.',
+    description:
+      'How an AI coding agent must behave: scope discipline, minimal diffs, when to ask, honesty, tooling limits. Not code style.',
   },
   {
     id: 'workflow',
     label: 'Planning & Workflow',
     group: 'dev',
-    description: 'Process before and during a change: plan first, incremental steps, verify, commit granularity. Not agent behavior rules.',
+    description:
+      'Process before and during a change: plan first, incremental steps, verify, commit granularity. Not agent behavior rules.',
   },
   {
     id: 'effort',
     label: 'Effort & Depth',
     group: 'dev',
-    description: 'How much work to spend: exploration breadth, verification depth, thinking budget, when to stop. Not output length (see Tone).',
+    description:
+      'How much work to spend: exploration breadth, verification depth, thinking budget, when to stop. Not output length (see Tone).',
   },
   {
     id: 'codestyle',
     label: 'Code Style & Quality',
     group: 'dev',
-    description: 'Language-agnostic code quality: naming, function size, comments, immutability, error handling patterns. Not language specifics.',
+    description:
+      'Language-agnostic code quality: naming, function size, comments, immutability, error handling patterns. Not language specifics.',
   },
   {
     id: 'typescript',
     label: 'TypeScript & JavaScript',
     group: 'dev',
-    description: 'TS/JS specifics: strict types, generics, async patterns, modules, tooling. Not React or Node server concerns.',
+    description:
+      'TS/JS specifics: strict types, generics, async patterns, modules, tooling. Not React or Node server concerns.',
   },
   {
     id: 'python',
     label: 'Python',
     group: 'dev',
-    description: 'Python specifics: typing, idioms, packaging, async, tooling like ruff/pytest. Not general code style.',
+    description:
+      'Python specifics: typing, idioms, packaging, async, tooling like ruff/pytest. Not general code style.',
   },
   {
     id: 'frontend',
     label: 'Frontend & React',
     group: 'dev',
-    description: 'UI code: React components, hooks, state, CSS/Tailwind, rendering performance. Not generic TS, not accessibility rules.',
+    description:
+      'UI code: React components, hooks, state, CSS/Tailwind, rendering performance. Not generic TS, not accessibility rules.',
   },
   {
     id: 'accessibility',
     label: 'Accessibility',
     group: 'dev',
-    description: 'WCAG 2.2, ARIA, keyboard and focus, screen readers, motion and contrast preferences, testing a11y. Not visual color rules.',
+    description:
+      'WCAG 2.2, ARIA, keyboard and focus, screen readers, motion and contrast preferences, testing a11y, including a11y rules inside React code. Not visual color rules.',
   },
   {
     id: 'mobile',
     label: 'Mobile',
     group: 'dev',
-    description: 'iOS, Android, React Native, Flutter: platform conventions, navigation, gestures, offline, performance, store requirements.',
+    description:
+      'iOS, Android, React Native, Flutter: platform conventions, navigation, gestures, offline, performance, store requirements.',
   },
   {
     id: 'backend',
     label: 'Backend & APIs',
     group: 'dev',
-    description: 'Server code: REST/GraphQL design, validation, auth flows, error responses, pagination, idempotency. Not database internals.',
+    description:
+      'Server code: REST/GraphQL design, validation, auth flows, error responses, pagination, idempotency. Not database internals.',
   },
   {
     id: 'errors',
     label: 'Errors, Logging & Observability',
     group: 'dev',
-    description: 'App-level error handling, structured logging, metrics, tracing, alerting hooks. Not infra dashboards or pipelines.',
+    description:
+      'App-level error handling, structured logging, metrics, tracing, alerting hooks. Not infra dashboards or pipelines.',
   },
   {
     id: 'database',
@@ -99,31 +111,36 @@ export const CATEGORIES: Category[] = [
     id: 'data',
     label: 'Data & Analytics',
     group: 'dev',
-    description: 'Analytics SQL, pandas/dataframes, pipelines, notebooks, data quality, reproducibility. Not OLTP schema design.',
+    description:
+      'Analytics SQL, pandas/dataframes, pipelines, notebooks, data quality, reproducibility. Not OLTP schema design.',
   },
   {
     id: 'testing',
     label: 'Testing',
     group: 'dev',
-    description: 'Unit, integration, e2e tests: what to cover, structure, mocking rules, flakiness, TDD. Not debugging existing failures.',
+    description:
+      'Unit, integration, e2e tests: what to cover, structure, mocking rules, flakiness, TDD. Not debugging existing failures.',
   },
   {
     id: 'debugging',
     label: 'Debugging',
     group: 'dev',
-    description: 'Finding root causes of failures: reproduce, isolate, hypothesize, verify fix. Not code review of working code.',
+    description:
+      'Finding root causes of failures: reproduce, isolate, hypothesize, verify fix. Not code review of working code.',
   },
   {
     id: 'review',
     label: 'Code Review',
     group: 'dev',
-    description: 'Reviewing a diff or PR: what to look for, severity ranking, how to report findings. Not fixing the bugs found.',
+    description:
+      'Reviewing a diff or PR: what to look for, severity ranking, how to report findings. Not fixing the bugs found.',
   },
   {
     id: 'refactor',
     label: 'Refactoring',
     group: 'dev',
-    description: 'Restructuring working code safely: behavior preservation, small steps, dead code, extraction. Not new features.',
+    description:
+      'Restructuring working code safely: behavior preservation, small steps, dead code, extraction. Not new features.',
   },
   {
     id: 'security',
@@ -135,31 +152,36 @@ export const CATEGORIES: Category[] = [
     id: 'performance',
     label: 'Performance',
     group: 'dev',
-    description: 'Measuring and improving speed and resource use: profiling first, complexity, caching, memory, bundle size.',
+    description:
+      'Measuring and improving speed and resource use: profiling first, complexity, caching, memory, bundle size.',
   },
   {
     id: 'architecture',
     label: 'Architecture & Design',
     group: 'dev',
-    description: 'System and module design: boundaries, patterns, trade-offs, ADRs, scalability. Not line-level code style.',
+    description:
+      'System and module design: boundaries, patterns, trade-offs, ADRs, scalability. Not line-level code style.',
   },
   {
     id: 'git',
     label: 'Git & Version Control',
     group: 'dev',
-    description: 'Commits, branches, PR descriptions, rebasing, history hygiene, conventional commits. Not CI pipelines.',
+    description:
+      'Commits, branches, PR descriptions, rebasing, history hygiene, conventional commits. Not CI pipelines.',
   },
   {
     id: 'deps',
     label: 'Dependencies & Packaging',
     group: 'dev',
-    description: 'Semver, lockfiles, upgrades, monorepos, publishing, license checks, supply-chain hygiene. Not security review.',
+    description:
+      'Semver, lockfiles, upgrades, monorepos, publishing, license checks, supply-chain hygiene. Not security review.',
   },
   {
     id: 'devops',
     label: 'DevOps, CI/CD & Infra',
     group: 'dev',
-    description: 'Pipelines, Docker, Kubernetes, IaC, deployments, observability platforms, environments. Not application code.',
+    description:
+      'Pipelines, Docker, Kubernetes, IaC, deployments, observability platforms, environments. Not application code.',
   },
   {
     id: 'shell',
@@ -171,31 +193,36 @@ export const CATEGORIES: Category[] = [
     id: 'docs',
     label: 'Documentation',
     group: 'dev',
-    description: 'Writing for developers: READMEs, API docs, inline docs, changelogs, ADR text. Not PR descriptions or commit messages.',
+    description:
+      'Writing for developers: READMEs, API docs, inline docs, changelogs, ADR text. Not PR descriptions or commit messages.',
   },
   {
     id: 'i18n',
     label: 'Internationalization',
     group: 'dev',
-    description: 'i18n in code: message catalogs, ICU plurals, RTL, date/number/currency APIs, locale fallback. Not translating text.',
+    description:
+      'i18n in code: message catalogs, ICU plurals, RTL, date/number/currency APIs, locale fallback. Not translating text.',
   },
   {
     id: 'explain',
     label: 'Explain & Learn',
     group: 'dev',
-    description: 'Having the AI explain code, concepts, or errors to a human: depth, analogies, walkthroughs. Not writing docs.',
+    description:
+      'Having the AI explain code, concepts, or errors to a human: depth, analogies, walkthroughs. Not writing docs.',
   },
   {
     id: 'ai',
     label: 'AI & LLM Integration',
     group: 'dev',
-    description: 'Building with LLMs: prompt design in apps, tool use, RAG, evals, cost and latency, safety. Not prompts for the assistant itself.',
+    description:
+      'Building with LLMs: prompt design in apps, tool use, RAG, evals, cost and latency, safety. Not prompts for the assistant itself.',
   },
   {
     id: 'environment',
     label: 'Environment & Compatibility',
     group: 'dev',
-    description: 'Runtime, browser, and OS targets, offline or no-network, resource limits, legacy support, "must run on X" constraints.',
+    description:
+      'Runtime, browser, and OS targets, offline or no-network, resource limits, legacy support, "must run on X" constraints.',
   },
 
   // ---- Visual design -----------------------------------------------------
@@ -203,49 +230,57 @@ export const CATEGORIES: Category[] = [
     id: 'visual-style',
     label: 'Visual Style',
     group: 'visual',
-    description: 'Overall look of any visual output (interfaces, slides, graphics, brand): minimal, glassmorphism, neo-brutalist, flat, retro, editorial. Not color or type specifics.',
+    description:
+      'Overall look of any visual output (interfaces, slides, graphics, brand): minimal, glassmorphism, neo-brutalist, flat, retro, editorial. Not color or type specifics.',
   },
   {
     id: 'mood',
     label: 'Mood & Feel',
     group: 'visual',
-    description: 'Emotional register of a design: calm, playful, premium, trustworthy, energetic, technical. Expressed as design direction, not palette values.',
+    description:
+      'Emotional register of a design: calm, playful, premium, trustworthy, energetic, technical. Expressed as design direction, not palette values.',
   },
   {
     id: 'color',
     label: 'Color & Theme',
     group: 'visual',
-    description: 'Palettes, theming, contrast, dark mode, semantic color tokens, accent usage, gradients, for any visual medium. Not typography or layout.',
+    description:
+      'Palettes, theming, contrast, dark mode, semantic color tokens, accent usage, gradients, for any visual medium. Not typography, layout, or chart palettes (see Data Visualization).',
   },
   {
     id: 'typography',
     label: 'Typography',
     group: 'visual',
-    description: 'Font pairing, type scale, weights, line height, measure, hierarchy, numerals, monospace usage. Not color.',
+    description:
+      'Font pairing, type scale, weights, line height, measure, hierarchy, numerals, monospace usage. Not color.',
   },
   {
     id: 'layout',
     label: 'Layout & Spacing',
     group: 'visual',
-    description: 'Grids, spacing scale, density, alignment, responsive breakpoints, whitespace, sizing, for screens, slides, or print. Not motion.',
+    description:
+      'Grids, spacing scale, density, alignment, responsive breakpoints, whitespace, sizing, for screens, slides, or print. Not motion.',
   },
   {
     id: 'motion',
     label: 'Motion & Interaction',
     group: 'visual',
-    description: 'Transitions, micro-interactions, hover and focus states, loading states, easing, duration, reduced motion.',
+    description:
+      'Transitions, micro-interactions, hover and focus states, loading states, easing, duration, reduced motion.',
   },
   {
     id: 'dataviz',
     label: 'Data Visualization',
     group: 'visual',
-    description: 'Chart choice, axes and scales, color for data, annotations, honesty, accessibility of charts. Not general UI color.',
+    description:
+      'Chart choice, axes and scales, color for data, annotations, honesty, accessibility of charts. Not general UI color.',
   },
   {
     id: 'ux',
     label: 'UX & Usability',
     group: 'visual',
-    description: 'Flows, forms, empty/loading/error states, onboarding, microcopy, confirmations, feedback. Not visual style or a11y specs.',
+    description:
+      'Flows, forms, empty/loading/error states, onboarding, microcopy, confirmations, feedback. Not visual style or a11y specs.',
   },
 
   // ---- General -----------------------------------------------------------
@@ -253,19 +288,22 @@ export const CATEGORIES: Category[] = [
     id: 'writing',
     label: 'Writing & Editing',
     group: 'general',
-    description: 'General prose for humans: emails, announcements, proposals, editing and proofreading. Not developer documentation.',
+    description:
+      'General prose for humans: emails, announcements, proposals, editing and proofreading. Not developer documentation.',
   },
   {
     id: 'summarize',
     label: 'Summarize & Extract',
     group: 'general',
-    description: 'Condensing text and pulling out facts, action items, decisions, and structure from documents, threads, and transcripts.',
+    description:
+      'Condensing text and pulling out facts, action items, decisions, and structure from documents, threads, and transcripts.',
   },
   {
     id: 'analysis',
     label: 'Analysis & Research',
     group: 'general',
-    description: 'Evaluating options, comparing, investigating, weighing evidence, and producing recommendations. Not software architecture.',
+    description:
+      'Evaluating options, comparing, investigating, weighing evidence, and producing recommendations. Not software architecture.',
   },
   {
     id: 'brainstorm',
@@ -283,13 +321,15 @@ export const CATEGORIES: Category[] = [
     id: 'marketing',
     label: 'Marketing & Copy',
     group: 'general',
-    description: 'Persuasive and promotional text: headlines, landing pages, launch posts, release announcements, social copy.',
+    description:
+      'Persuasive and promotional text: headlines, landing pages, launch posts, release announcements, social copy.',
   },
   {
     id: 'learning',
     label: 'Teaching & Explaining',
     group: 'general',
-    description: 'Teaching any topic to a human: audience level, analogies, exercises, quizzes, study plans. Not code explanation.',
+    description:
+      'Teaching any topic to a human: audience level, analogies, exercises, quizzes, study plans. Not code explanation.',
   },
   {
     id: 'translate',
@@ -309,13 +349,15 @@ export const CATEGORIES: Category[] = [
     id: 'context',
     label: 'Context Handling',
     group: 'style',
-    description: 'How the AI treats supplied material: only given sources, cite from context, ask for missing files, handle stale or conflicting inputs.',
+    description:
+      'How the AI treats supplied material: only given sources, cite from context, ask for missing files, handle stale or conflicting inputs.',
   },
   {
     id: 'reasoning',
     label: 'Reasoning & Verification',
     group: 'style',
-    description: 'How the AI thinks and checks: step by step, alternatives, self-review, stating assumptions and uncertainty.',
+    description:
+      'How the AI thinks and checks: step by step, alternatives, self-review, stating assumptions and uncertainty.',
   },
   {
     id: 'tone',
@@ -327,16 +369,16 @@ export const CATEGORIES: Category[] = [
     id: 'language',
     label: 'Response Language',
     group: 'style',
-    description: 'Which language to answer in, keeping code and identifiers in English, term glossaries, bilingual output, simplified English.',
+    description:
+      'Which language to answer in, keeping code and identifiers in English, term glossaries, bilingual output, simplified English.',
   },
   {
     id: 'format',
     label: 'Output Format',
     group: 'style',
-    description: 'Shape of the response: code only, unified diff, markdown sections, JSON, tables, file-by-file. Not tone.',
+    description:
+      'Shape of the response: code only, unified diff, markdown sections, JSON, tables, file-by-file. Not tone.',
   },
 ]
 
-export const CATEGORY_BY_ID: ReadonlyMap<string, Category> = new Map(
-  CATEGORIES.map((c) => [c.id, c]),
-)
+export const CATEGORY_BY_ID: ReadonlyMap<string, Category> = new Map(CATEGORIES.map((c) => [c.id, c]))

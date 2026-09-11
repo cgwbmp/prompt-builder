@@ -17,19 +17,22 @@ export const image: Prompt[] = [
   {
     id: 'image.flat-vector',
     title: 'Flat vector illustration',
-    prompt: 'flat vector illustration, clean geometric shapes, solid fills, no gradients, limited color palette, crisp edges',
+    prompt:
+      'flat vector illustration, clean geometric shapes, solid fills, no gradients, limited color palette, crisp edges',
     category: 'image',
   },
   {
     id: 'image.watercolor',
     title: 'Watercolor painting',
-    prompt: 'watercolor painting, wet-on-wet washes, soft bleeding edges, visible paper texture, loose expressive brushwork',
+    prompt:
+      'watercolor painting, wet-on-wet washes, soft bleeding edges, visible paper texture, loose expressive brushwork',
     category: 'image',
   },
   {
     id: 'image.oil-painting',
     title: 'Classical oil painting',
-    prompt: 'oil painting on canvas, thick impasto brushstrokes, rich glazing, classical chiaroscuro, visible canvas texture',
+    prompt:
+      'oil painting on canvas, thick impasto brushstrokes, rich glazing, classical chiaroscuro, visible canvas texture',
     category: 'image',
   },
   {
@@ -41,7 +44,8 @@ export const image: Prompt[] = [
   {
     id: 'image.isometric-3d',
     title: 'Isometric 3D render',
-    prompt: 'isometric 3d render, clean geometry, soft ambient occlusion, pastel materials, miniature diorama, octane render',
+    prompt:
+      'isometric 3d render, clean geometry, soft ambient occlusion, pastel materials, miniature diorama, octane render',
     category: 'image',
   },
   {
@@ -59,7 +63,8 @@ export const image: Prompt[] = [
   {
     id: 'image.comic-book',
     title: 'Comic book style',
-    prompt: 'comic book style, bold ink outlines, halftone dots, dynamic pose, flat saturated colors, graphic novel panel',
+    prompt:
+      'comic book style, bold ink outlines, halftone dots, dynamic pose, flat saturated colors, graphic novel panel',
     category: 'image',
   },
   {
@@ -71,19 +76,22 @@ export const image: Prompt[] = [
   {
     id: 'image.pencil-sketch',
     title: 'Pencil sketch',
-    prompt: 'graphite pencil sketch, crosshatching, rough construction lines, smudged shading, sketchbook paper texture',
+    prompt:
+      'graphite pencil sketch, crosshatching, rough construction lines, smudged shading, sketchbook paper texture',
     category: 'image',
   },
   {
     id: 'image.cyberpunk',
     title: 'Cyberpunk city',
-    prompt: 'cyberpunk, rain-slicked streets, holographic signage, neon pink and cyan, dystopian night megacity, futuristic tech',
+    prompt:
+      'cyberpunk, rain-slicked streets, holographic signage, neon pink and cyan, dystopian night megacity, futuristic tech',
     category: 'image',
   },
   {
     id: 'image.vaporwave',
     title: 'Vaporwave aesthetic',
-    prompt: 'vaporwave aesthetic, pastel pink and teal, retro 80s grid floor, chrome shapes, glitch artifacts, marble busts and palm trees',
+    prompt:
+      'vaporwave aesthetic, pastel pink and teal, retro 80s grid floor, chrome shapes, glitch artifacts, marble busts and palm trees',
     category: 'image',
   },
   {
@@ -95,13 +103,15 @@ export const image: Prompt[] = [
   {
     id: 'image.bauhaus',
     title: 'Bauhaus poster',
-    prompt: 'bauhaus poster design, primary colors, geometric circles triangles and squares, bold flat shapes, asymmetric grid layout',
+    prompt:
+      'bauhaus poster design, primary colors, geometric circles triangles and squares, bold flat shapes, asymmetric grid layout',
     category: 'image',
   },
   {
     id: 'image.art-deco',
     title: 'Art deco',
-    prompt: 'art deco, gold and black, symmetrical geometric ornament, sunburst motifs, 1920s glamour, streamlined elegance',
+    prompt:
+      'art deco, gold and black, symmetrical geometric ornament, sunburst motifs, 1920s glamour, streamlined elegance',
     category: 'image',
   },
 
@@ -109,7 +119,8 @@ export const image: Prompt[] = [
   {
     id: 'image.cinematic-lighting',
     title: 'Cinematic lighting',
-    prompt: 'cinematic lighting, dramatic shadows, high dynamic range, moody atmosphere, film still, anamorphic lens flare',
+    prompt:
+      'cinematic lighting, dramatic shadows, high dynamic range, moody atmosphere, film still, anamorphic lens flare',
     category: 'image',
   },
   {
@@ -139,7 +150,8 @@ export const image: Prompt[] = [
   {
     id: 'image.low-key',
     title: 'Low key with rim light',
-    prompt: 'low key lighting, single hard light source, rim light, glowing edge outline, deep shadows, chiaroscuro, black background',
+    prompt:
+      'low key lighting, single hard light source, rim light, glowing edge outline, deep shadows, chiaroscuro, black background',
     category: 'image',
   },
 
@@ -153,19 +165,22 @@ export const image: Prompt[] = [
   {
     id: 'image.85mm-portrait',
     title: '85mm portrait',
-    prompt: '85mm portrait lens, f/1.8, shallow depth of field, creamy bokeh, sharp focus on the eyes, head and shoulders framing',
+    prompt:
+      '85mm portrait lens, f/1.8, shallow depth of field, creamy bokeh, sharp focus on the eyes, head and shoulders framing',
     category: 'image',
   },
   {
     id: 'image.macro',
     title: 'Macro close-up',
-    prompt: 'macro photography, extreme close-up, 1:1 magnification, fine surface detail, razor-thin focus plane, soft blurred background',
+    prompt:
+      'macro photography, extreme close-up, 1:1 magnification, fine surface detail, razor-thin focus plane, soft blurred background',
     category: 'image',
   },
   {
     id: 'image.wide-angle',
     title: 'Wide angle',
-    prompt: 'wide angle 16mm lens, expansive perspective, dramatic foreground, slight barrel distortion, environmental shot',
+    prompt:
+      'wide angle 16mm lens, expansive perspective, dramatic foreground, slight barrel distortion, environmental shot',
     category: 'image',
   },
   {

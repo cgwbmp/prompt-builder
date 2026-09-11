@@ -4,211 +4,239 @@ export const testing: Prompt[] = [
   {
     id: 'testing.aaa-structure',
     title: 'Arrange, Act, Assert',
-    prompt: 'Structure every test as Arrange, Act, Assert with the three sections separated by a blank line. The Act section should be a single call; if a test needs two acts, it is two tests.',
+    prompt:
+      'Structure every test as Arrange, Act, Assert with the three sections separated by a blank line. The Act section should be a single call; if a test needs two acts, it is two tests.',
     category: 'testing',
   },
   {
     id: 'testing.one-behavior-per-test',
     title: 'One behavior per test',
-    prompt: 'Test one behavior per test function so a failure names exactly what broke. Multiple assertions are fine when they all verify the same behavior; assertions about unrelated outcomes go in separate tests.',
+    prompt:
+      'Test one behavior per test function so a failure names exactly what broke. Multiple assertions are fine when they all verify the same behavior; assertions about unrelated outcomes go in separate tests.',
     category: 'testing',
   },
   {
     id: 'testing.test-behavior-not-implementation',
     title: 'Test behavior, not implementation',
-    prompt: 'Test through the public interface and assert on observable outcomes (return values, state, emitted events, persisted data), never on private methods, internal call order, or which helper was used. A pure refactor that preserves behavior must not break any test.',
+    prompt:
+      'Test through the public interface and assert on observable outcomes (return values, state, emitted events, persisted data), never on private methods, internal call order, or which helper was used. A pure refactor that preserves behavior must not break any test.',
     category: 'testing',
   },
   {
     id: 'testing.state-over-interaction',
     title: 'Assert state, not interactions',
-    prompt: 'Prefer asserting on results over asserting that a collaborator was called with certain arguments. Use interaction assertions (`toHaveBeenCalledWith`, `assert_called_once_with`) only when the call itself is the required side effect, such as sending an email or publishing an event.',
+    prompt:
+      'Prefer asserting on results over asserting that a collaborator was called with certain arguments. Use interaction assertions (`toHaveBeenCalledWith`, `assert_called_once_with`) only when the call itself is the required side effect, such as sending an email or publishing an event.',
     category: 'testing',
   },
   {
     id: 'testing.descriptive-names',
     title: 'Descriptive test names',
-    prompt: 'Name tests as a sentence describing the scenario and expected outcome, for example `returns 404 when the user does not exist` or `test_rejects_expired_token`, so the failure output reads as a specification. Never name tests `test1` or after the method under test alone.',
+    prompt:
+      'Name tests as a sentence describing the scenario and expected outcome, for example `returns 404 when the user does not exist` or `test_rejects_expired_token`, so the failure output reads as a specification. Never name tests `test1` or after the method under test alone.',
     category: 'testing',
   },
   {
     id: 'testing.given-when-then-structure',
     title: 'Behavior-driven grouping',
-    prompt: "Group tests by behavior of the unit under test using nested describe blocks or test classes (for example `describe('checkout')` > `describe('when the cart is empty')`), not one test per production method.",
+    prompt:
+      "Group tests by behavior of the unit under test using nested describe blocks or test classes (for example `describe('checkout')` > `describe('when the cart is empty')`), not one test per production method.",
     category: 'testing',
   },
   {
     id: 'testing.mock-only-boundaries',
     title: 'Mock only at boundaries',
-    prompt: 'Mock only external boundaries you do not control: network, clock, filesystem, third-party APIs, randomness. Do not mock your own modules, repositories, or domain objects; use the real implementation or an in-memory fake.',
+    prompt:
+      'Mock only external boundaries you do not control: network, clock, filesystem, third-party APIs, randomness. Do not mock your own modules, repositories, or domain objects; use the real implementation or an in-memory fake.',
     category: 'testing',
   },
   {
     id: 'testing.fakes-over-mocks',
     title: 'Prefer fakes over mocks',
-    prompt: 'For dependencies that need replacing, prefer a hand-written fake (in-memory repository, fake clock, fake mailer) with real behavior over a mock library stubbing individual methods. Fakes survive refactors; per-method stubs couple tests to the current call shape.',
+    prompt:
+      'For dependencies that need replacing, prefer a hand-written fake (in-memory repository, fake clock, fake mailer) with real behavior over a mock library stubbing individual methods. Fakes survive refactors; per-method stubs couple tests to the current call shape.',
     category: 'testing',
   },
   {
     id: 'testing.trophy-mostly-integration',
     title: 'Mostly integration tests',
-    prompt: 'Weight the suite toward integration tests that exercise several real units together through the same entry points the application uses, with a smaller number of unit tests for pure logic with many branches and a few end-to-end tests for critical flows. The more a test resembles real usage, the more confidence it earns.',
+    prompt:
+      'Weight the suite toward integration tests that exercise several real units together through the same entry points the application uses, with a smaller number of unit tests for pure logic with many branches and a few end-to-end tests for critical flows. The more a test resembles real usage, the more confidence it earns.',
     category: 'testing',
   },
   {
     id: 'testing.pyramid-fast-unit-base',
     title: 'Fast unit test base',
-    prompt: 'Keep the bulk of tests as fast, isolated unit tests that run in milliseconds with no I/O, so the whole suite finishes in seconds and can run on every save. Reserve slow integration and end-to-end tests for the seams and journeys unit tests cannot reach.',
+    prompt:
+      'Keep the bulk of tests as fast, isolated unit tests that run in milliseconds with no I/O, so the whole suite finishes in seconds and can run on every save. Reserve slow integration and end-to-end tests for the seams and journeys unit tests cannot reach.',
     category: 'testing',
   },
   {
     id: 'testing.deterministic',
     title: 'Deterministic tests',
-    prompt: 'Make every test deterministic: inject the clock, seed or inject randomness, pin time zones and locale, and never depend on test execution order, wall-clock time, or shared mutable state between tests.',
+    prompt:
+      'Make every test deterministic: inject the clock, seed or inject randomness, pin time zones and locale, and never depend on test execution order, wall-clock time, or shared mutable state between tests.',
     category: 'testing',
   },
   {
     id: 'testing.no-sleeps',
     title: 'No sleeps in tests',
-    prompt: 'Never use `sleep` or fixed timeouts to wait for asynchronous work. Await the promise, use fake timers, or poll for the condition with a bounded wait (`waitFor`, `eventually`), so tests are neither slow nor flaky.',
+    prompt:
+      'Never use `sleep` or fixed timeouts to wait for asynchronous work. Await the promise, use fake timers, or poll for the condition with a bounded wait (`waitFor`, `eventually`), so tests are neither slow nor flaky.',
     category: 'testing',
   },
   {
     id: 'testing.isolated-fresh-state',
     title: 'Isolated per-test state',
-    prompt: 'Create all fixtures inside each test or in a per-test setup hook and tear them down afterwards. Tests must pass when run alone, in any order, and in parallel; never rely on state left by an earlier test.',
+    prompt:
+      'Create all fixtures inside each test or in a per-test setup hook and tear them down afterwards. Tests must pass when run alone, in any order, and in parallel; never rely on state left by an earlier test.',
     category: 'testing',
   },
   {
     id: 'testing.fixtures-factories',
     title: 'Factories over shared fixtures',
-    prompt: "Build test data with factory functions or builders that produce a valid default object and accept overrides (`makeUser({ role: 'admin' })`) instead of large shared fixture files. Each test should show only the fields that matter to it.",
+    prompt:
+      "Build test data with factory functions or builders that produce a valid default object and accept overrides (`makeUser({ role: 'admin' })`) instead of large shared fixture files. Each test should show only the fields that matter to it.",
     category: 'testing',
   },
   {
     id: 'testing.damp-over-dry',
     title: 'Readable over DRY in tests',
-    prompt: 'Favor descriptive, self-contained tests over deduplicated ones. Inline the values that matter to the assertion rather than hiding them behind helpers and constants; a little duplication is acceptable when it makes the test readable without jumping around.',
+    prompt:
+      'Favor descriptive, self-contained tests over deduplicated ones. Inline the values that matter to the assertion rather than hiding them behind helpers and constants; a little duplication is acceptable when it makes the test readable without jumping around.',
     category: 'testing',
   },
   {
     id: 'testing.no-logic-in-tests',
     title: 'No logic in tests',
-    prompt: 'Keep conditionals, loops, try/catch, and computed expected values out of test bodies. Expected values should be literal; if several inputs need the same check, use a parameterized or table-driven test.',
+    prompt:
+      'Keep conditionals, loops, try/catch, and computed expected values out of test bodies. Expected values should be literal; if several inputs need the same check, use a parameterized or table-driven test.',
     category: 'testing',
   },
   {
     id: 'testing.table-driven',
     title: 'Table-driven for input variants',
-    prompt: 'When the same behavior must be verified for many inputs, use a parameterized or table-driven test (`test.each`, `@pytest.mark.parametrize`, Go subtests) with one row per case and a readable case name, instead of copy-pasting the test body.',
+    prompt:
+      'When the same behavior must be verified for many inputs, use a parameterized or table-driven test (`test.each`, `@pytest.mark.parametrize`, Go subtests) with one row per case and a readable case name, instead of copy-pasting the test body.',
     category: 'testing',
   },
   {
     id: 'testing.edge-cases-checklist',
     title: 'Edge case checklist',
-    prompt: 'For every function under test, cover the edge cases: empty input, single element, maximum size, null/undefined, zero and negative numbers, boundary values (off-by-one at limits), unicode and whitespace strings, duplicates, and already-processed input.',
+    prompt:
+      'For every function under test, cover the edge cases: empty input, single element, maximum size, null/undefined, zero and negative numbers, boundary values (off-by-one at limits), unicode and whitespace strings, duplicates, and already-processed input.',
     category: 'testing',
   },
   {
     id: 'testing.error-paths',
     title: 'Test the failure paths',
-    prompt: 'Write tests for what happens when things go wrong: invalid input is rejected with the right error, a dependency throws or times out, a transaction rolls back, a retry stops. Assert on the specific error type or message, not just that something threw.',
+    prompt:
+      'Write tests for what happens when things go wrong: invalid input is rejected with the right error, a dependency throws or times out, a transaction rolls back, a retry stops. Assert on the specific error type or message, not just that something threw.',
     category: 'testing',
   },
   {
     id: 'testing.property-based',
     title: 'Property-based tests for invariants',
-    prompt: 'For parsers, serializers, encoders, and pure algorithms, add property-based tests (fast-check, Hypothesis, QuickCheck) that assert invariants such as round-tripping, idempotence, or agreement with a naive reference implementation, alongside a few hand-picked examples.',
+    prompt:
+      'For parsers, serializers, encoders, and pure algorithms, add property-based tests (fast-check, Hypothesis, QuickCheck) that assert invariants such as round-tripping, idempotence, or agreement with a naive reference implementation, alongside a few hand-picked examples.',
     category: 'testing',
   },
   {
     id: 'testing.snapshot-restraint',
     title: 'Snapshot tests sparingly',
-    prompt: 'Avoid snapshot tests except for small, stable, human-reviewable outputs such as a rendered error message or a generated config. Never snapshot a whole component tree or a large object; assert on the specific properties that matter instead.',
+    prompt:
+      'Avoid snapshot tests except for small, stable, human-reviewable outputs such as a rendered error message or a generated config. Never snapshot a whole component tree or a large object; assert on the specific properties that matter instead.',
     category: 'testing',
   },
   {
     id: 'testing.clear-failure-messages',
     title: 'Clear failure messages',
-    prompt: 'Use the most specific assertion available (`toEqual`, `assertEqual`, `toThrow(SpecificError)`) rather than `assert(x == y)` or `toBeTruthy`, so a failure prints expected versus actual. Add a message to any assertion whose failure would not be self-explanatory.',
+    prompt:
+      'Use the most specific assertion available (`toEqual`, `assertEqual`, `toThrow(SpecificError)`) rather than `assert(x == y)` or `toBeTruthy`, so a failure prints expected versus actual. Add a message to any assertion whose failure would not be self-explanatory.',
     category: 'testing',
   },
   {
     id: 'testing.coverage-signal',
     title: 'Coverage as signal, not goal',
-    prompt: 'Use coverage reports to find untested branches worth testing, not to hit a percentage. Do not write tests that execute code without asserting anything meaningful about it.',
+    prompt:
+      'Use coverage reports to find untested branches worth testing, not to hit a percentage. Do not write tests that execute code without asserting anything meaningful about it.',
     category: 'testing',
   },
   {
     id: 'testing.no-change-detector-tests',
     title: 'No change-detector tests',
-    prompt: 'Do not write tests that merely mirror the implementation line by line or assert that a function calls the functions it calls. If a test would need to change for every refactor, delete it or rewrite it against behavior.',
+    prompt:
+      'Do not write tests that merely mirror the implementation line by line or assert that a function calls the functions it calls. If a test would need to change for every refactor, delete it or rewrite it against behavior.',
     category: 'testing',
   },
   {
     id: 'testing.failing-test-first',
     title: 'Write the failing test first',
-    prompt: 'Before implementing a behavior or fixing a bug, write a test that fails for the right reason, run it and confirm the failure, then write the minimal code to make it pass. A test that has never been seen failing proves nothing.',
-    category: 'testing',
-  },
-  {
-    id: 'testing.red-green-refactor',
-    title: 'Red, green, refactor loop',
-    prompt: 'Work in short TDD cycles: one failing test, the simplest passing implementation, then refactor with the suite green. Do not write several tests ahead or implement beyond what the current test requires.',
+    prompt:
+      'Before implementing a behavior or fixing a bug, write a test that fails for the right reason, run it and confirm the failure, then write the minimal code to make it pass. A test that has never been seen failing proves nothing.',
     category: 'testing',
   },
   {
     id: 'testing.run-related-then-full',
     title: 'Related tests, then full suite',
-    prompt: 'After a change, run the tests for the touched module first for fast feedback, then run the full suite before declaring the work done. Report the exact command and the pass/fail counts.',
+    prompt:
+      'After a change, run the tests for the touched module first for fast feedback, then run the full suite before declaring the work done. Report the exact command and the pass/fail counts.',
     category: 'testing',
   },
   {
     id: 'testing.tests-with-code-change',
     title: 'Tests ship with the change',
-    prompt: 'Include tests in the same change as the production code they cover. Every new branch, public function, or bug fix needs a test; do not defer tests to a follow-up.',
+    prompt:
+      'Include tests in the same change as the production code they cover. Every new branch, public function, or bug fix needs a test; do not defer tests to a follow-up.',
     category: 'testing',
   },
   {
     id: 'testing.fix-flaky-dont-retry',
     title: 'Fix flaky tests, no retries',
-    prompt: 'Treat a flaky test as a bug: find the shared state, timing dependency, or order dependence and remove it. Do not add automatic retries, increase timeouts, or mark it skipped without a linked issue and a reason.',
+    prompt:
+      'Treat a flaky test as a bug: find the shared state, timing dependency, or order dependence and remove it. Do not add automatic retries, increase timeouts, or mark it skipped without a linked issue and a reason.',
     category: 'testing',
   },
   {
     id: 'testing.real-database-in-integration',
     title: 'Real database in integration tests',
-    prompt: 'Run integration tests against a real instance of the database engine used in production (via Docker or an ephemeral service), not against SQLite or an in-memory stand-in, and reset state between tests with a transaction rollback or truncation.',
+    prompt:
+      'Run integration tests against a real instance of the database engine used in production (via Docker or an ephemeral service), not against SQLite or an in-memory stand-in, and reset state between tests with a transaction rollback or truncation.',
     category: 'testing',
   },
   {
     id: 'testing.contract-tests-external-apis',
     title: 'Contract tests for external APIs',
-    prompt: 'For third-party HTTP APIs, record real responses into fixtures and test against them, and add a contract or smoke test that runs against the real service in a separate, non-blocking job so fixture drift is detected.',
+    prompt:
+      'For third-party HTTP APIs, record real responses into fixtures and test against them, and add a contract or smoke test that runs against the real service in a separate, non-blocking job so fixture drift is detected.',
     category: 'testing',
   },
   {
     id: 'testing.e2e-critical-paths-only',
     title: 'E2E for critical journeys only',
-    prompt: 'Limit end-to-end browser tests to the few revenue- or safety-critical user journeys (sign-up, checkout, core workflow). Select elements by role and accessible name, not CSS classes or test ids where a role exists, and never assert on layout details.',
+    prompt:
+      'Limit end-to-end browser tests to the few revenue- or safety-critical user journeys (sign-up, checkout, core workflow). Select elements by role and accessible name, not CSS classes or test ids where a role exists, and never assert on layout details.',
     category: 'testing',
   },
   {
     id: 'testing.no-test-only-production-code',
     title: 'No test-only production code',
-    prompt: 'Do not add methods, flags, or exports to production code solely to make tests easier. If code is hard to test, improve its design by injecting the dependency or extracting the pure logic.',
+    prompt:
+      'Do not add methods, flags, or exports to production code solely to make tests easier. If code is hard to test, improve its design by injecting the dependency or extracting the pure logic.',
     category: 'testing',
   },
   {
     id: 'testing.test-file-conventions',
     title: 'Match project test conventions',
-    prompt: 'Follow the existing test layout, runner, and assertion style of the project (file naming, colocated versus `tests/` directory, existing helpers) before introducing any new pattern or library.',
+    prompt:
+      'Follow the existing test layout, runner, and assertion style of the project (file naming, colocated versus `tests/` directory, existing helpers) before introducing any new pattern or library.',
     category: 'testing',
   },
   {
     id: 'testing.mutation-check',
     title: 'Sanity-check test strength',
-    prompt: 'After writing a test, temporarily break the implementation (invert the condition, return a wrong value) and confirm the test fails. If it still passes, the test is not testing what it claims.',
+    prompt:
+      'After writing a test, temporarily break the implementation (invert the condition, return a wrong value) and confirm the test fails. If it still passes, the test is not testing what it claims.',
     category: 'testing',
   },
 ]

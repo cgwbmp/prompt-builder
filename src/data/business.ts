@@ -16,13 +16,6 @@ export const business: Prompt[] = [
     category: 'business',
   },
   {
-    id: 'business.scqa-framing',
-    title: 'SCQA problem framing',
-    prompt:
-      'Frame problems using SCQA: Situation (what is true now), Complication (what changed), Question (what must be answered), Answer (the recommendation). Use it as the opening of proposals and pitches.',
-    category: 'business',
-  },
-  {
     id: 'business.narrative-memo',
     title: 'Narrative memo, not slides',
     prompt:
@@ -132,13 +125,6 @@ export const business: Prompt[] = [
     title: 'Risk register',
     prompt:
       'Track risks as a register: each with a description, likelihood (1-5), impact (1-5), owner, mitigation, and the trigger that would escalate it. Sort by likelihood times impact.',
-    category: 'business',
-  },
-  {
-    id: 'business.pre-mortem',
-    title: 'Pre-mortem before committing',
-    prompt:
-      'Before committing to a plan, run a pre-mortem: assume the project has failed, list the most plausible reasons, and add a mitigation or early warning sign for each one to the plan.',
     category: 'business',
   },
   {

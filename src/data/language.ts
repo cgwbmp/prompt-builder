@@ -4,61 +4,71 @@ export const language: Prompt[] = [
   {
     id: 'language.english',
     title: 'Respond in English',
-    prompt: 'Write all prose in English for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in English for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.russian',
     title: 'Respond in Russian',
-    prompt: 'Write all prose in Russian for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in Russian for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.german',
     title: 'Respond in German',
-    prompt: 'Write all prose in German for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in German for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.spanish',
     title: 'Respond in Spanish',
-    prompt: 'Write all prose in Spanish for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in Spanish for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.french',
     title: 'Respond in French',
-    prompt: 'Write all prose in French for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in French for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.portuguese',
     title: 'Respond in Portuguese',
-    prompt: 'Write all prose in Portuguese for the whole conversation, using the Brazilian variant unless I specify otherwise, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in Portuguese for the whole conversation, using the Brazilian variant unless I specify otherwise, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.chinese-simplified',
     title: 'Respond in Chinese (Simplified)',
-    prompt: 'Write all prose in Simplified Chinese for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in Simplified Chinese for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.japanese',
     title: 'Respond in Japanese',
-    prompt: 'Write all prose in Japanese for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in Japanese for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.ukrainian',
     title: 'Respond in Ukrainian',
-    prompt: 'Write all prose in Ukrainian for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in Ukrainian for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
     id: 'language.polish',
     title: 'Respond in Polish',
-    prompt: 'Write all prose in Polish for the whole conversation, regardless of the language of my messages or of the material I share.',
+    prompt:
+      'Write all prose in Polish for the whole conversation, regardless of the language of my messages or of the material I share.',
     category: 'language',
   },
   {
@@ -70,7 +80,8 @@ export const language: Prompt[] = [
   {
     id: 'language.dominant-language-when-mixed',
     title: 'Dominant language when mixed',
-    prompt: 'If my message mixes languages, reply in the one that carries most of the words, and do not mirror the mixing.',
+    prompt:
+      'If my message mixes languages, reply in the one that carries most of the words, and do not mirror the mixing.',
     category: 'language',
   },
   {
@@ -146,13 +157,15 @@ export const language: Prompt[] = [
   {
     id: 'language.american-spelling',
     title: 'American English spelling',
-    prompt: 'Use American English spelling and vocabulary consistently (color, organize, behavior, license as a noun), including in headings and lists.',
+    prompt:
+      'Use American English spelling and vocabulary consistently (color, organize, behavior, license as a noun), including in headings and lists.',
     category: 'language',
   },
   {
     id: 'language.british-spelling',
     title: 'British English spelling',
-    prompt: 'Use British English spelling and vocabulary consistently (colour, organise, behaviour, licence as a noun), including in headings and lists.',
+    prompt:
+      'Use British English spelling and vocabulary consistently (colour, organise, behaviour, licence as a noun), including in headings and lists.',
     category: 'language',
   },
   {
@@ -185,7 +198,7 @@ export const language: Prompt[] = [
   },
   {
     id: 'language.ui-strings-in-product-language',
-    title: 'UI strings in the product language',
+    title: 'UI strings in product language',
     prompt:
       'Write any user-facing strings, error messages, and UI labels you produce in the language the product ships in, and write your explanation to me in my language. Do not translate one into the other.',
     category: 'language',

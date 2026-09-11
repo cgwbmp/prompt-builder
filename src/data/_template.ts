@@ -9,11 +9,16 @@
  *      - `id` is unique and starts with `<category-id>.`
  *      - `title` and `prompt` are non-empty
  *      - `category` matches an id in `categories.ts`
+ *      - `title` is unique across all categories (case-insensitive)
  * 4. Import and spread it into `PROMPTS` in `index.ts`.
  *
  * Writing guidance:
  *   - Scope: software development prompts for any AI coding assistant.
- *   - `title`: 2 to 5 words, human-friendly, what a user would scan for.
+ *   - `title`: 1 to 5 words, human-friendly, what a user would scan for.
+ *   - Before adding, search the other category files for the same idea.
+ *     One rule lives in one category; if two categories could claim it, the
+ *     `description` in `categories.ts` decides. Do not duplicate it.
+ *   - Order within a file is thematic (group related prompts together).
  *   - `prompt`: self-contained instruction that reads well when concatenated
  *     with other prompts under a `## Category` header. Imperative mood.
  *     One to three sentences. No "You are a…" unless the category is Role.

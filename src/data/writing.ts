@@ -114,13 +114,6 @@ export const writing: Prompt[] = [
     category: 'writing',
   },
   {
-    id: 'writing.narrative-memo',
-    title: 'Narrative memo, no bullets',
-    prompt:
-      'Write the piece as a narrative memo in full sentences and connected paragraphs, with no bullet points or slide-style fragments. Each paragraph must build on the previous one so the argument can be read straight through.',
-    category: 'writing',
-  },
-  {
     id: 'writing.persuasive',
     title: 'Persuasive register',
     prompt:

@@ -101,9 +101,9 @@ export const devops: Prompt[] = [
   },
   {
     id: 'devops.graceful-shutdown',
-    title: 'Graceful shutdown',
+    title: 'Termination grace and preStop',
     prompt:
-      'Handle SIGTERM by stopping the readiness endpoint, draining in-flight requests, closing connections, and exiting within the configured `terminationGracePeriodSeconds`. Add a short `preStop` sleep so load balancers stop routing before the process exits.',
+      'Set `terminationGracePeriodSeconds` above the application drain deadline and add a short `preStop` sleep so load balancers stop routing before SIGTERM is delivered. Confirm the application fails readiness first and drains in-flight requests within that window.',
     category: 'devops',
   },
   {
@@ -185,9 +185,9 @@ export const devops: Prompt[] = [
   },
   {
     id: 'devops.twelve-factor-config',
-    title: 'Twelve-Factor config',
+    title: 'Same image, env-specific config',
     prompt:
-      'Follow Twelve-Factor for configuration: read every environment-specific value from environment variables, keep the same image and code across environments, and treat backing services (database, queue, cache) as attached resources swapped by URL.',
+      'Build one image and run it unchanged in every environment; inject differences only through environment variables or mounted secrets, never through per-environment images or config files baked into the build. Treat backing services (database, queue, cache) as attached resources swapped by URL.',
     category: 'devops',
   },
   {
@@ -220,9 +220,9 @@ export const devops: Prompt[] = [
   },
   {
     id: 'devops.structured-logging',
-    title: 'Structured logs to stdout',
+    title: 'Logs to stdout only',
     prompt:
-      'Emit logs as one JSON object per line to stdout with `timestamp`, `level`, `message`, `service`, and a request or trace id on every entry. Never write log files inside the container; the platform collects and ships stdout.',
+      'Write logs to stdout and stderr as one JSON object per line and let the platform collect and ship them. Never write log files inside the container, rotate logs in-process, or configure the application to ship logs itself.',
     category: 'devops',
   },
   {

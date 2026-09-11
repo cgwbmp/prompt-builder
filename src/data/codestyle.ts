@@ -88,8 +88,7 @@ export const codestyle: Prompt[] = [
   {
     id: 'codestyle.no-commented-out-code',
     title: 'No commented-out code',
-    prompt:
-      'Never leave commented-out code. Delete it; version control keeps the history if it is ever needed again.',
+    prompt: 'Never leave commented-out code. Delete it; version control keeps the history if it is ever needed again.',
     category: 'codestyle',
   },
   {

@@ -93,13 +93,6 @@ export const workflow: Prompt[] = [
     category: 'workflow',
   },
   {
-    id: 'workflow.atomic-commits',
-    title: 'Atomic, self-contained commits',
-    prompt:
-      'Each commit must compile and pass tests on its own and represent one complete logical change. Never commit a half-finished step that depends on a later commit to work.',
-    category: 'workflow',
-  },
-  {
     id: 'workflow.check-in-between-steps',
     title: 'Pause between milestones',
     prompt:
@@ -167,13 +160,6 @@ export const workflow: Prompt[] = [
     title: 'Change approach after two failures',
     prompt:
       'If the same approach fails twice, stop repeating variations of it. Step back, re-examine the assumptions, and try a fundamentally different approach or ask for input.',
-    category: 'workflow',
-  },
-  {
-    id: 'workflow.self-review-diff',
-    title: 'Review the diff before handoff',
-    prompt:
-      "Before declaring a change ready, read the full diff as if reviewing a stranger's pull request: look for leftover debug output, unrelated edits, missing tests, and anything not covered by the original plan.",
     category: 'workflow',
   },
   {

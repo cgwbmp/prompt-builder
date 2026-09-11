@@ -205,13 +205,6 @@ export const layout: Prompt[] = [
     category: 'layout',
   },
   {
-    id: 'layout.safe-areas',
-    title: 'Respect device safe areas',
-    prompt:
-      'Pad fixed headers, bottom bars, and full-screen views with env(safe-area-inset-*) so content clears notches, rounded corners, and the home indicator. Bottom action bars need a minimum of 16px plus the safe-area inset below their controls.',
-    category: 'layout',
-  },
-  {
     id: 'layout.container-queries',
     title: 'Container queries for components',
     prompt:

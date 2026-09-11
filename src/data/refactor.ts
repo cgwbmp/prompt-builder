@@ -107,13 +107,6 @@ export const refactor: Prompt[] = [
     category: 'refactor',
   },
   {
-    id: 'refactor.formatting-separate',
-    title: 'Formatting in its own commit',
-    prompt:
-      'Keep whitespace, import ordering, and formatter runs in their own commit, separate from structural refactoring, so behavior-relevant changes are not buried in noise.',
-    category: 'refactor',
-  },
-  {
     id: 'refactor.guard-clauses',
     title: 'Guard clauses over nesting',
     prompt:

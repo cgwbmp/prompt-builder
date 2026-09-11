@@ -65,13 +65,6 @@ export const security: Prompt[] = [
     category: 'security',
   },
   {
-    id: 'security.strict-cors',
-    title: 'Strict CORS allowlist',
-    prompt:
-      'Configure CORS with an explicit allowlist of origins. Never reflect the request Origin header back, and never combine a wildcard origin with credentials.',
-    category: 'security',
-  },
-  {
     id: 'security.ssrf-guard',
     title: 'Guard against SSRF',
     prompt:

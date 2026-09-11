@@ -114,6 +114,13 @@ export const ux: Prompt[] = [
     category: 'ux',
   },
   {
+    id: 'ux.imperative-copy',
+    title: 'Imperative UI copy',
+    prompt:
+      'Write instructions, empty states, and calls to action in the imperative mood addressed to the user ("Add your first project", "Choose a plan"), not as descriptions or suggestions ("You can add a project", "Projects can be added here"). Keep one instruction per sentence and lead with the verb.',
+    category: 'ux',
+  },
+  {
     id: 'ux.button-labels-are-verbs',
     title: 'Button labels are verbs',
     prompt:

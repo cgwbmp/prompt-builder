@@ -192,7 +192,7 @@ export const docs: Prompt[] = [
   },
   {
     id: 'docs.consistent-terminology',
-    title: 'One term per concept in docs',
+    title: 'One term per concept',
     prompt:
       'Use exactly one name for each concept throughout the docs and match the names used in the code and UI; do not alternate between "workspace", "project", and "repo" for the same thing. Add a glossary when the domain has more than a handful of terms.',
     category: 'docs',

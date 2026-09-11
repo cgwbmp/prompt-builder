@@ -177,13 +177,6 @@ export const python: Prompt[] = [
     category: 'python',
   },
   {
-    id: 'python.google-docstrings',
-    title: 'Google-style docstrings',
-    prompt:
-      'Give every public module, class, and function a triple-quoted docstring: a one-line summary, a blank line, then `Args:`, `Returns:` (or `Yields:`), and `Raises:` sections. Do not repeat types already in the annotations.',
-    category: 'python',
-  },
-  {
     id: 'python.protocols-for-duck-typing',
     title: 'Protocols for interfaces',
     prompt:

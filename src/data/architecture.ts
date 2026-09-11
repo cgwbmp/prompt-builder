@@ -93,13 +93,6 @@ export const architecture: Prompt[] = [
     category: 'architecture',
   },
   {
-    id: 'architecture.stateless-services',
-    title: 'Stateless services',
-    prompt:
-      'Design services to be stateless: keep session and workflow state in a backing store (database, cache, queue), not in process memory, so any instance can serve any request and instances can be added, removed, or restarted freely.',
-    category: 'architecture',
-  },
-  {
     id: 'architecture.idempotent-consumers',
     title: 'Idempotent consumers and handlers',
     prompt:
