@@ -62,7 +62,7 @@ export function OutputPanel({ output, custom, onCustomChange, selectedCount, onC
           onChange={(e) => onCustomChange(e.target.value)}
           rows={3}
           placeholder="Describe what you actually want done…"
-          className="glass w-full resize-y rounded-xl px-3 py-2 text-sm text-ink placeholder:text-ink-muted outline-none transition focus:border-neon-magenta/60 focus:ring-2 focus:ring-neon-magenta/30"
+          className="glass w-full resize-y rounded-xl px-3 py-2 font-mono text-xs text-ink placeholder:text-ink-muted outline-none transition focus:border-neon-magenta/60 focus:ring-2 focus:ring-neon-magenta/30"
         />
       </label>
 
@@ -75,7 +75,7 @@ export function OutputPanel({ output, custom, onCustomChange, selectedCount, onC
           placeholder="Select prompts on the left to build your output…"
           aria-label="Joined prompt output"
           spellCheck={false}
-          className="glass min-h-56 w-full flex-1 resize-y rounded-xl px-3 py-2 font-mono text-xs leading-relaxed text-ink placeholder:text-ink-muted outline-none lg:min-h-0 lg:resize-none"
+          className="glass !border-neon-magenta/40 min-h-56 w-full flex-1 resize-y rounded-xl px-3 py-2 font-mono text-xs leading-relaxed text-ink placeholder:text-ink-muted outline-none lg:min-h-0 lg:resize-none"
         />
       </div>
 

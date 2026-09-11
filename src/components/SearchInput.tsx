@@ -23,7 +23,7 @@ export function SearchInput({ value, onChange }: SearchInputProps) {
         onChange={(e) => onChange(e.target.value)}
         placeholder="Search prompts…"
         aria-label="Search prompts"
-        className="glass w-full rounded-xl py-2.5 pl-3 pr-3 text-sm text-ink placeholder:text-ink-muted outline-none transition focus:border-neon-cyan/60 focus:ring-2 focus:ring-neon-cyan/40"
+        className="glass w-full rounded-full py-2 pl-3 pr-3 font-mono text-xs text-ink placeholder:text-ink-muted outline-none transition focus:border-neon-cyan/60 focus:ring-2 focus:ring-neon-cyan/40"
       />
       {/* {value && (
         <button

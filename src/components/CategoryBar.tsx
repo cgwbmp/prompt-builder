@@ -67,13 +67,13 @@ function Chip({ label, title, active, count, accent = 'cyan', onClick }: ChipPro
       title={title}
       onClick={onClick}
       className={[
-        'inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150',
-        active ? activeClass : 'border-white/10 bg-white/3 text-ink-muted hover:border-white/25 hover:text-ink',
+        'relative inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150',
+        active ? activeClass : 'border-white/10 bg-white/3 text-pink-200 hover:border-white/25 hover:text-ink',
       ].join(' ')}
     >
       {label}
       {count > 0 && (
-        <span className="rounded-full bg-neon-magenta/20 px-1.5 text-[10px] leading-4 text-neon-magenta">{count}</span>
+        <span className="absolute top-[-1px] right-[-1px] w-2 h-2 rounded-full bg-neon-magenta/90 text-xs leading-4 text-neon-magenta"><span className='sr-only'>{count}</span></span>
       )}
     </button>
   )
