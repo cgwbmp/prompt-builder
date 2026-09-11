@@ -167,8 +167,8 @@ body {
   z-index: 40;
   pointer-events: none;
   background: rgba(5, 5, 16, 0.4);
-  backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
   animation: tooltip-in 600ms ease-out;
 }
 
