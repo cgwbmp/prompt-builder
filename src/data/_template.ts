@@ -1,7 +1,9 @@
 /**
  * TEMPLATE for a new category file. Steps:
  *
- * 1. Add the category to `categories.ts` (id, label, description).
+ * 1. Add the category to `categories.ts` (id, label, group, description).
+ *    `group` is one of dev | visual | general | style and only affects the
+ *    chip bar grouping; position in the array sets output order.
  * 2. Copy this file to `<category-id>.ts` and rename the export.
  * 3. Fill in prompts. Rules enforced by `npm run check`:
  *      - `id` is unique and starts with `<category-id>.`

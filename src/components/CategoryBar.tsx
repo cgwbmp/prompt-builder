@@ -1,4 +1,5 @@
 import type { Category } from '../types'
+import { CATEGORY_GROUPS } from '../data/categories'
 import { ALL, FAVORITES, type CategoryFilter } from '../lib/filter'
 
 interface CategoryBarProps {
@@ -20,26 +21,42 @@ export function CategoryBar({
   favoriteCount,
 }: CategoryBarProps) {
   return (
-    <div className="flex flex-wrap gap-2" role="tablist" aria-label="Categories">
-      <Chip label="All" active={active === ALL} count={totalSelected} onClick={() => onChange(ALL)} />
-      <Chip
-        label={`★ Favorites${favoriteCount > 0 ? ` (${favoriteCount})` : ''}`}
-        title="Prompts you starred"
-        active={active === FAVORITES}
-        count={0}
-        accent="magenta"
-        onClick={() => onChange(FAVORITES)}
-      />
-      {categories.map((c) => (
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Quick filters">
+        <Chip label="All" active={active === ALL} count={totalSelected} onClick={() => onChange(ALL)} />
         <Chip
-          key={c.id}
-          label={c.label}
-          title={c.description}
-          active={active === c.id}
-          count={selectedCounts.get(c.id) ?? 0}
-          onClick={() => onChange(c.id)}
+          label={`★ Favorites${favoriteCount > 0 ? ` (${favoriteCount})` : ''}`}
+          title="Prompts you starred"
+          active={active === FAVORITES}
+          count={0}
+          accent="magenta"
+          onClick={() => onChange(FAVORITES)}
         />
-      ))}
+      </div>
+
+      {CATEGORY_GROUPS.map((group) => {
+        const inGroup = categories.filter((c) => c.group === group.id)
+        if (inGroup.length === 0) return null
+        return (
+          <div key={group.id} className="flex flex-col gap-1.5">
+            <div className="text-[10px] font-medium text-ink-muted uppercase">
+              {group.label}
+            </div>
+            <div className="flex flex-wrap gap-2" role="tablist" aria-label={group.label}>
+              {inGroup.map((c) => (
+                <Chip
+                  key={c.id}
+                  label={c.label}
+                  title={c.description}
+                  active={active === c.id}
+                  count={selectedCounts.get(c.id) ?? 0}
+                  onClick={() => onChange(c.id)}
+                />
+              ))}
+            </div>
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -68,7 +85,7 @@ function Chip({ label, title, active, count, accent = 'cyan', onClick }: ChipPro
       onClick={onClick}
       className={[
         'relative inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150',
-        active ? activeClass : 'border-white/10 bg-white/3 text-pink-200 hover:border-white/25 hover:text-ink',
+        active ? activeClass : 'border-white/10 bg-white/3 text-pink-100 hover:border-white/25 hover:text-ink',
       ].join(' ')}
     >
       {label}

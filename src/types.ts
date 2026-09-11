@@ -1,11 +1,15 @@
 export type CategoryId = string
 
+/** Visual grouping in the chip bar. Does not affect filtering or output order. */
+export type CategoryGroup = 'dev' | 'visual' | 'general' | 'style'
+
 export interface Category {
   /** Stable kebab-case id, also used as the prefix of every prompt id in it. */
   id: CategoryId
   /** Human-readable label, used for chips and as the `## header` in output. */
   label: string
   description?: string
+  group: CategoryGroup
 }
 
 export interface Prompt {

@@ -2,7 +2,7 @@
  * Validates the prompt catalog. Run with `npm run check`.
  * Exits non-zero on any error so it can gate CI.
  */
-import { CATEGORIES, CATEGORY_BY_ID, PROMPTS } from '../src/data/index.ts'
+import { CATEGORIES, CATEGORY_BY_ID, CATEGORY_GROUPS, PROMPTS } from '../src/data/index.ts'
 
 const errors: string[] = []
 const seen = new Set<string>()
@@ -33,10 +33,15 @@ for (const p of PROMPTS) {
 }
 
 const catIds = new Set<string>()
+const groupIds = new Set(CATEGORY_GROUPS.map((g) => g.id))
 for (const c of CATEGORIES) {
   if (catIds.has(c.id)) errors.push(`category "${c.id}": duplicate id`)
   catIds.add(c.id)
   if (!c.label?.trim()) errors.push(`category "${c.id}": empty label`)
+  if (!groupIds.has(c.group)) errors.push(`category "${c.id}": unknown group "${c.group}"`)
+}
+for (const g of CATEGORY_GROUPS) {
+  if (!CATEGORIES.some((c) => c.group === g.id)) console.warn(`warn: group "${g.id}" has no categories`)
 }
 
 const counts = new Map<string, number>()

@@ -2,7 +2,7 @@
 
 Compose AI-ready prompts for coding assistants (Claude, Cursor, Copilot, Codex, and others) from prebuilt building blocks. Filter by category, search, multi-select, star favorites, and copy the joined result. Selection and favorites persist in the browser.
 
-The catalog has three groups. Development: agent working rules, code style, languages, testing, review, security, architecture, git, DevOps, docs, AI integration. Visual design, for interfaces, slides, graphics, or brand: visual style, mood, color, typography, layout, motion. General: writing, summarizing, analysis, brainstorming, business, marketing, teaching, translation, image generation. Cross-cutting: how the assistant should reason, talk, and format output.
+The catalog has four groups, shown as labeled rows in the chip bar. Development: agent working rules, workflow, code style, TypeScript, Python, frontend, accessibility, mobile, backend, errors and observability, database, data and analytics, testing, debugging, review, refactoring, security, performance, architecture, git, dependencies, DevOps, shell, docs, i18n, explain, AI integration, environment constraints. Visual design, for interfaces, slides, graphics, or brand: visual style, mood, color, typography, layout, motion, data visualization, UX. General: writing, summarizing, analysis, brainstorming, business, marketing, teaching, translation, image generation. Response style: context handling, reasoning, communication style, response language, output format.
 
 Stack: React 19, TypeScript, Vite 8, Tailwind CSS 4. Deployed to GitHub Pages from `main`.
 
@@ -21,7 +21,7 @@ npm run build      # check + build into dist/
 
 Prompts live in `src/data/<category>.ts`, one file per category.
 
-1. If the category is new, add it to `src/data/categories.ts`. Order there defines chip order and section order in the output.
+1. If the category is new, add it to `src/data/categories.ts` with a `group` (dev, visual, general, or style). Array order defines chip order within a group and section order in the output.
 2. Copy `src/data/_template.ts` to `src/data/<category-id>.ts` and rename the export.
 3. Add prompts. Each is `{ id, title, prompt, category }`:
    - `id` must be `<category-id>.<kebab-slug>` and unique. Never renumber or rename ids.
