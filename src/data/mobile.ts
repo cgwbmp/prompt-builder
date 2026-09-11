@@ -94,7 +94,7 @@ export const mobile: Prompt[] = [
   },
   {
     id: 'mobile.sixty-fps-main-thread',
-    title: 'Keep the main thread free',
+    title: 'Off the UI thread on mobile',
     prompt:
       'Move JSON parsing, image decoding, database queries, and crypto off the UI thread and budget 16 ms per frame (8 ms on 120 Hz displays). Profile with Xcode Instruments, Android Profiler, or Flutter DevTools on a real device before and after any performance change.',
     category: 'mobile',

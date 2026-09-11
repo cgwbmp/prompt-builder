@@ -262,7 +262,7 @@ export const accessibility: Prompt[] = [
   },
   {
     id: 'accessibility.accessible-charts',
-    title: 'Accessible charts',
+    title: 'ARIA and patterns for charts',
     prompt:
       'For every chart, provide the underlying data as a table or a text summary of the key takeaway, give the svg or canvas role="img" with an aria-label stating the conclusion, and distinguish series by shape, pattern, or direct labels rather than color alone.',
     category: 'accessibility',

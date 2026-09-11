@@ -2,13 +2,6 @@ import type { Prompt } from '../types'
 
 export const ux: Prompt[] = [
   {
-    id: 'ux.one-primary-action',
-    title: 'One primary action per screen',
-    prompt:
-      'Give each screen exactly one primary action rendered as the single prominent button; make secondary actions visually quieter and place destructive actions apart from the primary one so they cannot be hit by habit.',
-    category: 'ux',
-  },
-  {
     id: 'ux.progressive-disclosure',
     title: 'Progressive disclosure',
     prompt:
@@ -108,7 +101,7 @@ export const ux: Prompt[] = [
   },
   {
     id: 'ux.consistent-terminology',
-    title: 'One term per concept',
+    title: 'One word per product concept',
     prompt:
       'Use one word for each concept across the whole product, its emails, and its errors: do not mix remove, delete, and trash, or workspace, team, and organization. Keep a short glossary and check new copy against it.',
     category: 'ux',

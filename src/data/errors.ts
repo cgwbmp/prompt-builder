@@ -255,7 +255,7 @@ export const errors: Prompt[] = [
   },
   {
     id: 'errors.test-failure-paths',
-    title: 'Test the failure paths',
+    title: 'Fault-injection tests',
     prompt:
       'For each dependency, inject faults (timeout, connection refused, 500, malformed payload) in tests and assert the domain error type, the mapped status or exit code, the user-facing message, and that the expected log line and metric were emitted.',
     category: 'errors',
