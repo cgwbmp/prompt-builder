@@ -79,7 +79,10 @@ export function PromptCard({ prompt, selected, favorite, onToggle, onToggleFavor
         type="button"
         aria-pressed={selected}
         aria-describedby={tip ? tipId : undefined}
-        onClick={() => onToggle(prompt.id)}
+        onClick={() => {
+          onToggle(prompt.id)
+          if (selected) hideTip()
+        }}
         onFocus={showTip}
         onBlur={hideTip}
         className="flex h-full w-full flex-col gap-2 rounded-xl p-4 text-left outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan/60"

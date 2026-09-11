@@ -44,7 +44,7 @@ export default function App() {
         <div className="stars" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 pt-6 pb-24 sm:px-6 lg:px-8 lg:pb-6">
         <header className={`mb-6 flex items-center gap-3 ${flare ? 'flare' : ''}`}>
           <Logo size={36} />
           <div>
@@ -89,6 +89,25 @@ export default function App() {
             onCopied={onCopied}
           />
         </div>
+      </div>
+
+      <div className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 flex flex-col gap-2 lg:hidden">
+        <button
+          type="button"
+          aria-label="Go to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="glass-dark h-8 w-8 rounded-full text-lg text-neon-cyan shadow-glow-cyan"
+        >
+          ↑
+        </button>
+        <button
+          type="button"
+          aria-label="Go to prompt"
+          onClick={() => document.getElementById('output-panel')?.scrollIntoView({ behavior: 'smooth' })}
+          className="glass-dark h-8 w-8 rounded-full text-lg text-neon-magenta shadow-glow-magenta"
+        >
+          ↓
+        </button>
       </div>
     </>
   )
