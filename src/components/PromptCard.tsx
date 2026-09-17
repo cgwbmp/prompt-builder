@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { memo, useEffect, useId, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { Prompt } from '../types'
 
@@ -21,7 +21,17 @@ const HOVER_DELAY_MS = 350
 const TIP_GAP_PX = 8
 const TIP_MAX_HEIGHT_PX = 260
 
-export function PromptCard({ prompt, selected, favorite, onToggle, onToggleFavorite }: PromptCardProps) {
+/**
+ * Memoised: a single toggle changes one card's props, but the grid can have
+ * hundreds of siblings mounted. All props are primitives or stable callbacks.
+ */
+export const PromptCard = memo(function PromptCard({
+  prompt,
+  selected,
+  favorite,
+  onToggle,
+  onToggleFavorite,
+}: PromptCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLParagraphElement>(null)
   const timerRef = useRef<number | undefined>(undefined)
@@ -154,4 +164,4 @@ export function PromptCard({ prompt, selected, favorite, onToggle, onToggleFavor
         )}
     </div>
   )
-}
+})

@@ -17,6 +17,7 @@ export default function App() {
   const [query, setQuery] = useState('')
   const [custom, setCustom] = useState('')
   const [flare, setFlare] = useState(false)
+  const [sheetExpanded, setSheetExpanded] = useState(false)
   const { set: favorites, toggle: toggleFavorite } = usePersistedSet('prompt-builder:favorites', isKnownPrompt)
 
   const visible = useMemo(
@@ -87,11 +88,13 @@ export default function App() {
             selectedCount={selected.size}
             onClear={clear}
             onCopied={onCopied}
+            expanded={sheetExpanded}
+            onExpandedChange={setSheetExpanded}
           />
         </div>
       </div>
 
-      <div className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 flex flex-col gap-2 lg:hidden">
+      <div className={`fixed right-4 bottom-18 z-40 flex-col gap-2 lg:hidden ${sheetExpanded ? 'hidden' : 'flex'}`}>
         <button
           type="button"
           aria-label="Go to top"
@@ -99,14 +102,6 @@ export default function App() {
           className="glass-dark h-8 w-8 rounded-full text-lg text-neon-cyan shadow-glow-cyan"
         >
           ↑
-        </button>
-        <button
-          type="button"
-          aria-label="Go to prompt"
-          onClick={() => document.getElementById('output-panel')?.scrollIntoView({ behavior: 'smooth' })}
-          className="glass-dark h-8 w-8 rounded-full text-lg text-neon-magenta shadow-glow-magenta"
-        >
-          ↓
         </button>
       </div>
     </>
