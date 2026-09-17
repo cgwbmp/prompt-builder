@@ -111,7 +111,15 @@ export function PromptCard({ prompt, selected, favorite, onToggle, onToggleFavor
             : 'text-ink-muted/50 opacity-0 hover:text-neon-magenta group-hover:opacity-100 focus-visible:opacity-100',
         ].join(' ')}
       >
-        <svg viewBox="0 0 24 24" className="h-4 w-4" fill={favorite ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4"
+          fill={favorite ? 'currentColor' : 'none'}
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
           <path d="M12 2.5l2.95 6.1 6.7.9-4.9 4.7 1.2 6.7L12 17.7l-5.95 3.2 1.2-6.7-4.9-4.7 6.7-.9z" />
         </svg>
       </button>

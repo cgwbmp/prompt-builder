@@ -39,9 +39,7 @@ export function CategoryBar({
         if (inGroup.length === 0) return null
         return (
           <div key={group.id} className="flex flex-col gap-1.5">
-            <div className="text-[10px] font-medium text-ink-muted uppercase">
-              {group.label}
-            </div>
+            <div className="text-[10px] font-medium text-ink-muted uppercase">{group.label}</div>
             <div className="flex flex-wrap gap-2" role="tablist" aria-label={group.label}>
               {inGroup.map((c) => (
                 <Chip
@@ -90,7 +88,9 @@ function Chip({ label, title, active, count, accent = 'cyan', onClick }: ChipPro
     >
       {label}
       {count > 0 && (
-        <span className="absolute top-[-1px] right-[-1px] w-2 h-2 rounded-full bg-neon-magenta/90 text-xs leading-4 text-neon-magenta"><span className='sr-only'>{count}</span></span>
+        <span className="absolute top-[-1px] right-[-1px] w-2 h-2 rounded-full bg-neon-magenta/90 text-xs leading-4 text-neon-magenta">
+          <span className="sr-only">{count}</span>
+        </span>
       )}
     </button>
   )

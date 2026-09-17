@@ -37,8 +37,20 @@ export function Logo({ size = 32, className = '' }: LogoProps) {
         fill="rgba(0,240,255,0.06)"
       />
       {/* fins */}
-      <path d="M20 34 L10 46 L20 44 Z" stroke="#00f0ff" strokeWidth="2.5" strokeLinejoin="round" fill="rgba(0,240,255,0.06)" />
-      <path d="M44 34 L54 46 L44 44 Z" stroke="#00f0ff" strokeWidth="2.5" strokeLinejoin="round" fill="rgba(0,240,255,0.06)" />
+      <path
+        d="M20 34 L10 46 L20 44 Z"
+        stroke="#00f0ff"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+        fill="rgba(0,240,255,0.06)"
+      />
+      <path
+        d="M44 34 L54 46 L44 44 Z"
+        stroke="#00f0ff"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+        fill="rgba(0,240,255,0.06)"
+      />
       {/* window */}
       <circle cx="32" cy="26" r="5" stroke="#ff2bd6" strokeWidth="2.5" fill="rgba(255,43,214,0.15)" />
     </svg>

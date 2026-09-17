@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-space-950: #050510;
@@ -15,9 +15,9 @@
   --color-ink: #e6e8ff;
   --color-ink-muted: #8a90b8;
 
-  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --shadow-glow-cyan: 0 0 12px rgba(0, 240, 255, 0.45), 0 0 2px rgba(0, 240, 255, 0.8);
   --shadow-glow-magenta: 0 0 12px rgba(255, 43, 214, 0.45), 0 0 2px rgba(255, 43, 214, 0.8);
@@ -49,7 +49,7 @@ body {
 
 .space-bg::before,
 .space-bg::after {
-  content: "";
+  content: '';
   position: absolute;
   border-radius: 9999px;
   filter: blur(80px);
@@ -95,13 +95,21 @@ body {
 }
 
 @keyframes drift-a {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(8vw, 6vw) scale(1.1); }
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(8vw, 6vw) scale(1.1);
+  }
 }
 
 @keyframes drift-b {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(-7vw, -5vw) scale(1.08); }
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-7vw, -5vw) scale(1.08);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -134,14 +142,18 @@ body {
 }
 
 .neon-border::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
   background: linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-magenta));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -194,7 +206,7 @@ body {
 }
 
 .tooltip::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: -1px;
   border-radius: inherit;
@@ -207,8 +219,12 @@ body {
     var(--color-neon-magenta) 0.9turn,
     transparent 1turn
   );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: tip-outline-spin 1.8s linear infinite;
@@ -216,12 +232,18 @@ body {
 }
 
 @keyframes tooltip-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes tip-outline-spin {
-  to { --tip-angle: 360deg; }
+  to {
+    --tip-angle: 360deg;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -238,7 +260,9 @@ body {
 /* Rocket flame flare on copy */
 .flame {
   transform-origin: 50% 0%;
-  transition: transform 150ms ease-out, opacity 150ms ease-out;
+  transition:
+    transform 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .flare .flame {
@@ -246,9 +270,18 @@ body {
 }
 
 @keyframes flare {
-  0% { transform: scaleY(1); opacity: 1; }
-  40% { transform: scaleY(1.8); opacity: 1; }
-  100% { transform: scaleY(1); opacity: 1; }
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  40% {
+    transform: scaleY(1.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 /* Scrollbar (WebKit) */
