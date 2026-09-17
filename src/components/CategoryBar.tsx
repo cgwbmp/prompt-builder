@@ -22,7 +22,7 @@ export function CategoryBar({
 }: CategoryBarProps) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Quick filters">
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Quick filters">
         <Chip label="All" active={active === ALL} count={totalSelected} onClick={() => onChange(ALL)} />
         <Chip
           label={`★ Favorites${favoriteCount > 0 ? ` (${favoriteCount})` : ''}`}
@@ -40,7 +40,7 @@ export function CategoryBar({
         return (
           <div key={group.id} className="flex flex-col gap-1.5">
             <div className="text-[10px] font-medium text-ink-muted uppercase">{group.label}</div>
-            <div className="flex flex-wrap gap-2" role="tablist" aria-label={group.label}>
+            <div className="flex flex-wrap gap-2" role="group" aria-label={group.label}>
               {inGroup.map((c) => (
                 <Chip
                   key={c.id}
@@ -77,8 +77,7 @@ function Chip({ label, title, active, count, accent = 'cyan', onClick }: ChipPro
   return (
     <button
       type="button"
-      role="tab"
-      aria-selected={active}
+      aria-pressed={active}
       title={title}
       onClick={onClick}
       className={[
@@ -88,8 +87,8 @@ function Chip({ label, title, active, count, accent = 'cyan', onClick }: ChipPro
     >
       {label}
       {count > 0 && (
-        <span className="absolute top-[-1px] right-[-1px] w-2 h-2 rounded-full bg-neon-magenta/90 text-xs leading-4 text-neon-magenta">
-          <span className="sr-only">{count}</span>
+        <span className="absolute top-[-1px] right-[-1px] h-2 w-2 rounded-full bg-neon-magenta/90">
+          <span className="sr-only">{`, ${count} selected`}</span>
         </span>
       )}
     </button>
