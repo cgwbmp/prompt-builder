@@ -130,10 +130,7 @@ export function OutputPanel({
       )}
 
       {open && (
-        <div
-          id="output-panel-body"
-          className="flex lg:min-h-0 flex-1 flex-col gap-4"
-        >
+        <div id="output-panel-body" className="flex lg:min-h-0 flex-1 flex-col gap-4">
           <label className="flex flex-col gap-1.5">
             <span className="text-xs font-medium text-ink-muted">Your task (optional)</span>
             <textarea

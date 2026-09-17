@@ -3,6 +3,7 @@ import { CATEGORIES, PROMPTS, PROMPT_BY_ID } from './data'
 import { buildOutput } from './lib/join'
 import { FAVORITES, filterPrompts, type CategoryFilter } from './lib/filter'
 import { usePersistedSet } from './lib/usePersistedSet'
+import { useUrlSet } from './lib/useUrlSet'
 import { Logo } from './components/Logo'
 import { SearchInput } from './components/SearchInput'
 import { CategoryBar } from './components/CategoryBar'
@@ -11,8 +12,12 @@ import { OutputPanel } from './components/OutputPanel'
 
 const isKnownPrompt = (id: string) => PROMPT_BY_ID.has(id)
 
+/** Search param holding the comma-joined selection. */
+const SELECTION_PARAM = 'p'
+
 export default function App() {
-  const { set: selected, toggle, clear } = usePersistedSet('prompt-builder:selected', isKnownPrompt)
+  // Selection lives in the URL so any picked set can be shared as a link.
+  const { set: selected, toggle, clear } = useUrlSet(SELECTION_PARAM, isKnownPrompt)
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>(FAVORITES)
   const [query, setQuery] = useState('')
   const [custom, setCustom] = useState('')
