@@ -1,0 +1,36 @@
+name: Bug report
+description: Something in the app behaves wrong.
+labels: [bug]
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the URL if the selection matters, since it encodes the state.
+      placeholder: |
+        1. Open https://cgwbmp.github.io/prompt-builder/
+        2. ...
+    validations:
+      required: true
+
+  - type: input
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+
+  - type: input
+    id: actual
+    attributes:
+      label: Actual
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Safari 18.4 on iOS
+    validations:
+      required: true

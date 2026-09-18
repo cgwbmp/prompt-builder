@@ -1,6 +1,11 @@
 # Prompt Builder
 
-Compose AI-ready prompts for coding assistants (Claude, Cursor, Copilot, Codex, and others) from prebuilt building blocks. Filter by category, search, multi-select, star favorites, and copy the joined result. Selection and favorites persist in the browser.
+[![Deploy](https://github.com/cgwbmp/prompt-builder/actions/workflows/deploy.yml/badge.svg)](https://github.com/cgwbmp/prompt-builder/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+**[Open the app](https://cgwbmp.github.io/prompt-builder/)**
+
+Compose AI-ready prompts for coding assistants (Claude, Cursor, Copilot, Codex, and others) from prebuilt building blocks. Filter by category, search, multi-select, star favorites, and copy the joined result. The selection lives in the URL, so any set of prompts is a shareable link. Favorites persist in the browser.
 
 The catalog has four groups, shown as labeled rows in the chip bar. Development: agent working rules, workflow, code style, TypeScript, Python, frontend, accessibility, mobile, backend, errors and observability, database, data and analytics, testing, debugging, review, refactoring, security, performance, architecture, git, dependencies, DevOps, shell, docs, i18n, explain, AI integration, environment constraints. Visual design, for interfaces, slides, graphics, or brand: visual style, mood, color, typography, layout, motion, data visualization, UX. General: writing, summarizing, analysis, brainstorming, business, marketing, teaching, translation, image generation. Response style: context handling, reasoning, communication style, response language, output format.
 
@@ -14,7 +19,9 @@ npm run dev        # local dev server
 npm run check      # validate the prompt catalog (ids, categories, empty fields)
 npm run typecheck  # tsc
 npm run lint       # oxlint
-npm run build      # check + build into dist/
+npm run format     # prettier --write
+npm run test:e2e   # Playwright journeys, drives your installed Google Chrome
+npm run build      # lint + check + format check + typecheck + build into dist/
 ```
 
 ## Adding prompts
@@ -37,3 +44,7 @@ Selected prompts are grouped by category in registry order, each under a Markdow
 ## Deploy
 
 Pushing to `main` runs `.github/workflows/deploy.yml`, which validates, builds, and publishes `dist/` to GitHub Pages. In the repository settings, set Pages → Source to "GitHub Actions" once.
+
+## License
+
+[MIT](LICENSE).

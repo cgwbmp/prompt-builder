@@ -1,0 +1,37 @@
+name: Prompt suggestion
+description: Propose a prompt for the catalog.
+labels: [prompt]
+body:
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      description: A label from the chip bar, or "new" with a proposal.
+      placeholder: Testing
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The short name shown on the card.
+      placeholder: One behavior per test
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt text
+      description: Imperative mood, self-contained, no reference to other prompts.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it earns a card
+      description: What an assistant does differently with this prompt than without it.
+    validations:
+      required: true

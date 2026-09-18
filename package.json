@@ -1,7 +1,20 @@
 {
   "name": "prompt-builder",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.1.0",
+  "description": "Compose AI-ready prompts for coding assistants from prebuilt building blocks.",
+  "license": "MIT",
+  "homepage": "https://cgwbmp.github.io/prompt-builder/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgwbmp/prompt-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cgwbmp/prompt-builder/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
