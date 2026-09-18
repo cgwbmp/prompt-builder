@@ -22,3 +22,5 @@ jobs:
       - run: npm ci
       # Same gate as the deploy workflow: lint, catalog check, format, typecheck, build.
       - run: npm run build
+      # Unit tests, gated on the 80% coverage thresholds in vitest.config.ts.
+      - run: npm run test:coverage
